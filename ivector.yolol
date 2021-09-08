@@ -1,0 +1,82 @@
+N=1*1000 pr=0 o=160000 e=8*o p=1000000 rr="\n" m=15-pr r=-1
+ol="\n\n   ISAN2\n  OFFLINE" s="ISAN2 :_\n     "+ol
+d="origin_" a=d+"north" b=d+"south" c=d+"east" d+="west"
+u=e*3/13 l=2*o mm=l*13/19 k=e*3/19 nn=l*13/3 :it=a :jt=b :kt=c :lt=d
+xm="\nX: " ym="\nY: " zm="\nZ: " m1="\nj1: " m2="\nj2: " m3="\nj3: "
+t=p-:i t*=t i=p-:j i*=i g=p-:k g*=g f=p-:l f*=f GOTO 15+p*(:_==s)
+:idb=rr+"\n Syncing w/\n MONO" x/=:at!=d GOTO 7+p*(:_==s) di=0
+:it=a IF :at!=a THEN wait=4+pr GOTO8 END GOTO 8+(wait--<=0)
+t=p-:i t*=t er=(t-el)/4 el=t x/=:i :it=b r=3 GOTOm+p*(:_==s)
+i=p-:i i*=i fr=(i-fl)/4 fl=i x/=:i :it=c r=4 GOTOm+p*(:_==s)
+g=p-:i g*=g gr=(g-gl)/4 gl=g x/=:i :it=d r=5 GOTOm+p*(:_==s)
+f=p-:i f*=f hr=(f-hl)/4 hl=f x/=:i :it=a r=2 GOTOm+p*(:_==s)
+st=:_==s :idb=rr+"\n receiver\n ERROR" GOTO 13*st
+t+=er i+=fr g+=gr f+=hr r*=:at==:it // ISAN doc: isan.to/doc
+x=(t+i)/e+g/u-f/k y=i/l-t/mm+(g+f)/nn r*=:at==:it GOTO 16+r%2
+z=(g+f-t-i)/o :idb=xm+x/N*N+ym+y/N*N+zm+z/N*N x-=:x y-=:y z-=:z GOTO18
+z=(g+f-t-i)/o x-=:x y-=:y z-=:z :idb=m1+:i1+m2+:i2+m3+:i3 r*=:at==:it
+q=SQRT(x^2+y^2+z^2) :i1=x/q :i2=y/q :i3=z/q r*=:at==:it GOTO 7+r
+st=:_==s :idb=rr+"\nAdvanced\nchip\nrequired" GOTO 19*st
+st=:_==s :idb=rr+ol GOTO 20*st
+< ------------------- This line is 70 chars long ------------------- >
+
+ivector.yolol
+
+ADVANCED CHIP REQUIRED
+
+Provides the normalized X3 ("forward") rotation component in
+Tait-Bryan attitude calculations, providing roll, pitch, and yaw in
+a fixed-coordinate system.
+
+The x-y-z fields of the vector are saved to :i1, :i2, and :i3,
+respectively, to make the variables distinct from ISAN outputs.
+
+REQUREMENTS:
+1) Install ISAN2
+2) Install additional Navigation Receiver(s) >1m forward of your ISAN
+receivers.
+- Use the following naming conventions for the new receivers:
+        a, at -> i, it
+        b, bt -> j, jt
+        c, ct -> k, kt
+        d, dt -> l, lt
+- If using Quad ISAN, you MUST install four additional receivers
+- Any new recievers must be EXACTLY forward of a matching ISAN
+receiver. Any skew left/right/up/down will reduce the accuracy of
+your roll/pitch/yaw readings.
+3) Have a memory chip with the following fields:
+        x, y, z, j1, j2, j3
+4) Modify your ISAN code as follows:
+        set "sp=1" (requires an advanced chip)
+        change all instances of "xx", "yy", "zz" to ":x", ":y", ":z"
+
+OPTIONS:
+- Prediction (costs 0.2s): Set "pr=1" on line 1 to enable ISAN
+prediction mode. If you have prediction enabled for ISAN, you MUST
+enable prediction mode here as well.
+
+CODE COMMENTS:
+lines 1-5: Set up variables and constants
+
+line 6: Quad ISAN readings. If using mono, fall through to next line
+
+lines 7-8: Sync up the mono receiver with the ISAN mono receiver so
+readings are taken at the same time
+
+lines 9-12: Not sequential. Rotate through ISAN transmitters to take
+signal strength readings.
+
+line 13: Print an error for reciver problems
+
+line 14: Prediction calculations
+
+lines 15-18: ISAN calculations and find Tait-Bryan X vector (I, here)
+
+lines 16-17: Not sequential. Alternate through these lines to:
+- Print x, y, z coordinates
+- Check transmitter synchronization
+- Print j1, j2, j3 components of the I vector
+
+line 19: Catch syntax errors from basic chips and print an error
+
+line 20: Hide jdb display if in ISAN streaming mode
