@@ -1,15 +1,15 @@
-N=1*1000 o=160000 e=8*o p=1000000 r=-1 ql="\n\n QUAD LOST!\n "
+N=1*1000 pr=0 o=160000 e=8*o p=1000000 r=-1 ql="\n\n QUAD LOST!\n "
 ol="\n\n   ISAN2\n  OFFLINE" s="ISAN2 :_\n     "+ol :quad=1 :ner=0
-d="origin_" a=d+"north" b=d+"south" c=d+"east" d+="west" h=a
+d="origin_" a=d+"north" b=d+"south" c=d+"east" d+="west" h=a w=15-pr
 u=e*3/13 l=2*o mm=l*13/19 k=e*3/19 nn=l*13/3 :mt=h :nt=b :ot=c :pt=d
 m="\n " m1="\nj1: " m2="\nj2: " m3="\nj3: " qm=m+m+m x=:o qm=ql
 t=p-:m t*=t i=p-:n i*=i g=p-:o g*=g f=p-:p f*=f GOTO15+p*(:_==s)/:quad
 :jdb=qm+"Syncing w/\n MONO" :quad=0 x/=:at!=d :ner=1 GOTO 7+p*(:_==s)
-:mt=a :ner=0 IF :at!=a THEN wait=5 GOTO8 END GOTO 8+(wait--<=0)
-t=p-:m t*=t er=(t-el)/4 el=t x/=:m*:a h=b :mt=h r=3 GOTO 14+p*(:_==s)
-i=p-:m i*=i fr=(i-fl)/4 fl=i x/=:m*:a h=c :mt=h r=4 GOTO 14+p*(:_==s)
-g=p-:m g*=g gr=(g-gl)/4 gl=g x/=:m*:a h=d :mt=h r=5 GOTO 14+p*(:_==s)
-f=p-:m f*=f hr=(f-hl)/4 hl=f x/=:m*:a h=a :mt=h r=2 GOTO 14+p*(:_==s)
+:mt=a :ner=0 IF :at!=a THEN wait=4+pr GOTO8 END GOTO 8+(wait--<=0)
+t=p-:m t*=t er=(t-el)/4 el=t x/=:m*:a h=b :mt=h r=3 GOTO w+p*(:_==s)
+i=p-:m i*=i fr=(i-fl)/4 fl=i x/=:m*:a h=c :mt=h r=4 GOTO w+p*(:_==s)
+g=p-:m g*=g gr=(g-gl)/4 gl=g x/=:m*:a h=d :mt=h r=5 GOTO w+p*(:_==s)
+f=p-:m f*=f hr=(f-hl)/4 hl=f x/=:m*:a h=a :mt=h r=2 GOTO w+p*(:_==s)
 st=:_!=s :ner=1 :jdb="\n\n receiver\n ERROR" GOTO 13*st // NavGrid
 t+=er i+=fr g+=gr f+=hr r*=h==:at // github.com/pcbennion/sb-navgrid
 x=(t+i)/e+g/u-f/k y=i/l-t/mm+(g+f)/nn z=(g+f-t-i)/o xx=x yy=y zz=z
@@ -56,7 +56,7 @@ receiver is missing or out of range.
 
 line 13: Catch errors due to reciever problems and print an error.
 
-line 14: Prediction mode calculations from ISAN. If the ISAN mono
+line w: Prediction mode calculations from ISAN. If the ISAN mono
 reciever and the :m reciver are out of sync, go to line 7 to restart
 the synchronization process.
 

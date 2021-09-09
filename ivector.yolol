@@ -1,15 +1,15 @@
-N=1*1000 o=160000 e=8*o p=1000000 r=-1 ql="\n\n QUAD LOST!\n "
+N=1*1000 pr=0 o=160000 e=8*o p=1000000 r=-1 ql="\n\n QUAD LOST!\n "
 ol="\n\n   ISAN2\n  OFFLINE" s="ISAN2 :_\n     "+ol :quad=1 :ner=0
-d="origin_" a=d+"north" b=d+"south" c=d+"east" d+="west" h=a
+d="origin_" a=d+"north" b=d+"south" c=d+"east" d+="west" h=a w=15-pr
 u=e*3/13 l=2*o mm=l*13/19 k=e*3/19 nn=l*13/3 :it=h :jt=b :kt=c :lt=d
 m="\n " m1="\ni1: " m2="\ni2: " m3="\ni3: " qm=m+m+m x=:k qm=ql
 t=p-:i t*=t i=p-:j i*=i g=p-:k g*=g f=p-:l f*=f GOTO15+p*(:_==s)/:quad
 :idb=qm+"Syncing w/\n MONO" :quad=0 x/=:at!=d :ner=1 GOTO 7+p*(:_==s)
-:it=a :ner=0 IF :at!=a THEN wait=5 GOTO8 END GOTO 8+(wait--<=0)
-t=p-:i t*=t er=(t-el)/4 el=t x/=:i*:a h=b :it=h r=3 GOTO 14+p*(:_==s)
-i=p-:i i*=i fr=(i-fl)/4 fl=i x/=:i*:a h=c :it=h r=4 GOTO 14+p*(:_==s)
-g=p-:i g*=g gr=(g-gl)/4 gl=g x/=:i*:a h=d :it=h r=5 GOTO 14+p*(:_==s)
-f=p-:i f*=f hr=(f-hl)/4 hl=f x/=:i*:a h=a :it=h r=2 GOTO 14+p*(:_==s)
+:it=a :ner=0 IF :at!=a THEN wait=4+pr GOTO8 END GOTO 8+(wait--<=0)
+t=p-:i t*=t er=(t-el)/4 el=t x/=:i*:a h=b :it=h r=3 GOTO w+p*(:_==s)
+i=p-:i i*=i fr=(i-fl)/4 fl=i x/=:i*:a h=c :it=h r=4 GOTO w+p*(:_==s)
+g=p-:i g*=g gr=(g-gl)/4 gl=g x/=:i*:a h=d :it=h r=5 GOTO w+p*(:_==s)
+f=p-:i f*=f hr=(f-hl)/4 hl=f x/=:i*:a h=a :it=h r=2 GOTO w+p*(:_==s)
 st=:_!=s :ner=1 :idb="\n\n receiver\n ERROR" GOTO 13*st // NavGrid
 t+=er i+=fr g+=gr f+=hr r*=h==:at // github.com/pcbennion/sb-navgrid
 x=(t+i)/e+g/u-f/k y=i/l-t/mm+(g+f)/nn z=(g+f-t-i)/o xx=x yy=y zz=z
