@@ -1,0 +1,10 @@
+x       // isan X
+y       // isan Y
+z       // isan Z
+sy      // isan sync heartbeat: 0-3=MONO, 4-7=QUAD, string=ERROR
+Ux      // "fwd" vector X
+Uy      // "fwd" vector Y
+Uz      // "fwd" vector Z
+Vx      // "dwn" vector X
+Vy      // "dwn" vector Y
+Vz      // "dwn" vector Z
