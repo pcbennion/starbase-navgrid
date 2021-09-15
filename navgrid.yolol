@@ -1,0 +1,32 @@
+ls="    |\n " ls2=ls+ls ld="----+----\n " :NavGrid="\n "+ls2+ld+ls2
+a="o   |    \n 0" b=" o  |    \n 1" c="  o |    \n 2" s=1000 nl="\n "
+d="   o|    \n 3" e="    o    \n 4" f="    |o   \n 5" dm="DST " m0="M"
+g="    | o  \n 6" h="    |  o \n 7" i="    |   o\n 8" m1="" qm="  Q"
+j="o---+----\n 0" k="-o--+----\n 1" l="--o-+----\n 2" er=nl+"   NO"+nl
+m="---o+----\n 3" n="----o----\n 4" o="----+o---\n 5" er+="  NAVPT"+nl
+p="----+-o--\n 6" q="----+--o-\n 7" r="----+---o\n 8" er+=nl
+aa="0" bb=ls+"1" cc=ls2+"2" dd=ls2+ld+"3" ee=ls2+ld+ls+"4" 
+z=ls+ld+ls2+"0" y=ld+ls2+"1" x=ls2+"2" w=ls+"3" v="4" yd=z+y+x+w+v
+sx=a+b+c+d+e+f+g+h+i dx=j+k+l+m+n+o+p+q+r yu=aa+bb+cc+dd+ee
+
+
+t=sx-ht-a-b-c-d-e-f-g-h-i IF pt==2 THEN t=dx-ht-j-k-l-m-n-o-p-q-r END
+:NavGrid=u+nl+yu-pt-aa-bb-cc-dd-ee+t+yd-pt-z-y-x-w-v+dm+di s0=:sy
+pt=-:tPit+45 ht=:tHdg+45 di=:tDist pt+=(89-pt)*(pt>89) u=rr-u
+pt=(pt>0)*pt/18/s*s ht+=(89-ht)*(ht>89) ht=(ht>0)*ht/10/s*s 
+
+
+
+
+< ------------------- This line is 70 chars long ------------------- >
+
+navgrid.yolol
+    by StandPeter
+
+< ------------------- This line is 70 chars long ------------------- >
+
+PROFESSIONAL CHIP REQUIRED
+
+This is an all-in-one chip that
+
+u=hm-u

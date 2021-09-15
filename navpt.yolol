@@ -1,0 +1,20 @@
+rr="\n      " lo="\nLOADING...\n" im=20 s=" " n="\n " im=20
+p=20 i+=(i<1) idx=i-6/(i>6) wn="" w="\nwp0"-(i>9)+i x=6 GOTO16+idx/5
+p1="Prograde\n(X-Axis +)1" p2="Retrograde\n(X-Axis -)2"
+p3="Radial\n(Z-Axis +)3" p4="Anti-radial\n(Z-Axis -)4"
+p5="Normal\n(Y-Axis +)5" p6="Anti-normal\n(Y-Axis -)6"
+wn=p1+p2+p3+p4+p5+p6-i-p1-p2-p3-p4-p5-p6 :wstr=i-1 GOTOp
+:Waypt=rr+i+"/"+im+lo+wn c=a c-=--a x=p x/=c==s wn=c+wn GOTO5
+di=:wup*(i<=im)-:wdn*(i>1)/(1-:wset) :wup=0 :wdn=0 i+=di GOTOx-p*di
+wn="NO NAME" w="\nwp0"-(i>9)+i ws=w+n+:x/H*H+n+:y/H*H+n+:z/H*H+n+wn
+IFi==7 THEN:wp07=ws ENDIFi==8 THEN:wp08=ws ENDIFi==9 THEN:wp09=ws END
+IFi==10 THEN:wp10=ws ENDIFi==8 THEN:wp08=ws ENDIFi==9 THEN:wp09=ws END
+IFi==7 THEN:wp07=ws ENDIFi==8 THEN:wp08=ws ENDIFi==9 THEN:wp09=ws END
+IFi==7 THEN:wp07=ws ENDIFi==8 THEN:wp08=ws ENDIFi==9 THEN:wp09=ws END
+IFi==19 THEN:wp19=ws ENDIFi==20 THEN:wp20=ws END :wset=0 GOTOp
+wn=:NavPt-nm-"\nwp" na=wn!="" :NavPt=nm ws=w+:wStr+n+wn GOTO 11+5*na
+a=:wp07 b=:wp08 c=:wp09 d=:wp10 e=:wp11 ws=a+b+c+d+e-w-a-b-c-d-e GOTOp
+a=:wp12 b=:wp13 c=:wp14 d=:wp15 e=:wp16 ws=a+b+c+d+e-w-a-b-c-d-e GOTOp
+a=:wp17 b=:wp18 c=:wp19 d=:wp20 ws=a+b+c+d-w-a-b-c-d GOTOp
+wn="ERROR:\n No Memory\n for "+(w-"\n") :wstr="" GOTOp
+:wStr=a :Waypt=rr+i+"/"+im+"\n\n"+wn

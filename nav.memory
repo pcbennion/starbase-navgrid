@@ -1,0 +1,10 @@
+tPit    // Pitch to target
+tHdg    // Heading to target
+tDist   // Distance to target
+
+wStr    // Waypoint string containing x, y, and z coords
+wp07    // Waypoint 7
+wp08    // Waypoint 8
+wp09    // Waypoint 9
+wp10    // Waypoint 10
+wp11    // Waypoint 11
