@@ -1,20 +1,21 @@
-rr="\n      " lo="\nLOADING...\n" im=20 s=" " n="\n " im=20
-p=20 i+=(i<1) idx=i-6/(i>6) wn="" w="\nwp0"-(i>9)+i x=6 GOTO16+idx/5
-p1="Prograde\n(X-Axis +)1" p2="Retrograde\n(X-Axis -)2"
-p3="Radial\n(Z-Axis +)3" p4="Anti-radial\n(Z-Axis -)4"
-p5="Normal\n(Y-Axis +)5" p6="Anti-normal\n(Y-Axis -)6"
-wn=p1+p2+p3+p4+p5+p6-i-p1-p2-p3-p4-p5-p6 :wstr=i-1 GOTOp
-:Waypt=rr+i+"/"+im+lo+wn c=a c-=--a x=p x/=c==s wn=c+wn GOTO5
-di=:wup*(i<=im)-:wdn*(i>1)/(1-:wset) :wup=0 :wdn=0 i+=di GOTOx-p*di
-wn="NO NAME" w="\nwp0"-(i>9)+i ws=w+n+:x/H*H+n+:y/H*H+n+:z/H*H+n+wn
-IFi==7 THEN:wp07=ws ENDIFi==8 THEN:wp08=ws ENDIFi==9 THEN:wp09=ws END
-IFi==10 THEN:wp10=ws ENDIFi==8 THEN:wp08=ws ENDIFi==9 THEN:wp09=ws END
-IFi==7 THEN:wp07=ws ENDIFi==8 THEN:wp08=ws ENDIFi==9 THEN:wp09=ws END
-IFi==7 THEN:wp07=ws ENDIFi==8 THEN:wp08=ws ENDIFi==9 THEN:wp09=ws END
-IFi==19 THEN:wp19=ws ENDIFi==20 THEN:wp20=ws END :wset=0 GOTOp
-wn=:NavPt-nm-"\nwp" na=wn!="" :NavPt=nm ws=w+:wStr+n+wn GOTO 11+5*na
-a=:wp07 b=:wp08 c=:wp09 d=:wp10 e=:wp11 ws=a+b+c+d+e-w-a-b-c-d-e GOTOp
-a=:wp12 b=:wp13 c=:wp14 d=:wp15 e=:wp16 ws=a+b+c+d+e-w-a-b-c-d-e GOTOp
-a=:wp17 b=:wp18 c=:wp19 d=:wp20 ws=a+b+c+d-w-a-b-c-d GOTOp
-wn="ERROR:\n No Memory\n for "+(w-"\n") :wstr="" GOTOp
-:wStr=a :Waypt=rr+i+"/"+im+"\n\n"+wn
+rr="\n      " lo="\nLOADING...\n" n="\n " im=20 m="\n\n" er="NONE"
+i+=(i<1) idx=i-6/(i>6) wn="" w="\nwp0"-(i>9)+i GOTO17+idx/5
+p1="X+:\nPrograde1" p2="X-:\nRetrograde2" p3="Z+:\nRadial3" nn="name="
+p4="Z-:\nAnti-radial4" p5="Y+:\nNormal5" p6="Y-:\nAnti-normal6" eq="="
+wn="Preset "+p1+p2+p3+p4+p5+p6-i-p1-p2-p3-p4-p5-p6 v=i-1 nn=n+nn GOTO7
+:NavPt=rr+i+"/"+im+lo+wn c=v-(nn-eq) c-=--v x/=c==eq wn=c+wn GOTO6
+l="/" wh="\nwp" nm="\n  RENAME\n   MODE\nname=" :wStr=v x/=v=="" wn=er
+x=:NavPt=="" rm=rr+i+l+im :NavPt=rm+m+wn x/=x*(v=="") :NavPt="" GOTO16
+di=:wup*(i<=im)-:wdn*(i>1)/(1-:wset) :wup=0 :wdn=0 i+=di GOTO8-p*di
+wn="NO NAME" w="\nwp0"-(i>9)+i v=w+n+:x/H*H+n+:y/H*H+n+:z/H*H+nn+wn
+IF i==7 THEN:wp07=v ENDIF i==8 THEN:wp08=v ENDIF i==9 THEN:wp09=v END
+IFi==10 THEN:wp10=v ENDIFi==11 THEN:wp11=v ENDIFi==12 THEN:wp12=v END
+IFi==13 THEN:wp13=v ENDIFi==14 THEN:wp14=v ENDIFi==15 THEN:wp15=v END
+IFi==16 THEN:wp16=v ENDIFi==17 THEN:wp17=v ENDIFi==18 THEN:wp18=v END
+IFi==19 THEN:wp19=v ENDIFi==20 THEN:wp20=v END :wset=0 GOTO8
+wn=:NavPt-nm-nn-eq-wh x=wn!="" :NavPt=nm+wn v=w+:wStr+nn+wn GOTO11+5*x
+a=:wp07 b=:wp08 c=:wp09 d=:wp10 e=:wp11 v=a+b+c+d+e-w-a-b-c-d-e GOTO6
+a=:wp12 b=:wp13 c=:wp14 d=:wp15 e=:wp16 v=a+b+c+d+e-w-a-b-c-d-e GOTO6
+a=:wp17 b=:wp18 c=:wp19 d=:wp20 v=a+b+c+d-w-a-b-c-d GOTO6
+wn="ERROR:\n No Memory" :wStr="" GOTO8
+< ------------------- This line is 70 chars long ------------------- >

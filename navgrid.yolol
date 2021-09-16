@@ -1,23 +1,23 @@
 ls="    |\n " ls2=ls+ls ld="----+----\n " :NavGrid="\n "+ls2+ld+ls2
-a="o   |    \n 0" b=" o  |    \n 1" c="  o |    \n 2" s=1000 nl="\n "
-d="   o|    \n 3" e="    o    \n 4" f="    |o   \n 5" dm="DST " m0="M"
-g="    | o  \n 6" h="    |  o \n 7" i="    |   o\n 8" m1="" qm="  Q"
-j="o---+----\n 0" k="-o--+----\n 1" l="--o-+----\n 2" er=nl+"   NO"+nl
-m="---o+----\n 3" n="----o----\n 4" o="----+o---\n 5" er+="  NAVPT"+nl
-p="----+-o--\n 6" q="----+--o-\n 7" r="----+---o\n 8" er+=nl
-aa="0" bb=ls+"1" cc=ls2+"2" dd=ls2+ld+"3" ee=ls2+ld+ls+"4" 
-z=ls+ld+ls2+"0" y=ld+ls2+"1" x=ls2+"2" w=ls+"3" v="4" yd=z+y+x+w+v
-sx=a+b+c+d+e+f+g+h+i dx=j+k+l+m+n+o+p+q+r yu=aa+bb+cc+dd+ee
-
-
-t=sx-ht-a-b-c-d-e-f-g-h-i IF pt==2 THEN t=dx-ht-j-k-l-m-n-o-p-q-r END
-:NavGrid=u+nl+yu-pt-aa-bb-cc-dd-ee+t+yd-pt-z-y-x-w-v+dm+di s0=:sy
-pt=-:tPit+45 ht=:tHdg+45 di=:tDist pt+=(89-pt)*(pt>89) u=rr-u
-pt=(pt>0)*pt/18/s*s ht+=(89-ht)*(ht>89) ht=(ht>0)*ht/10/s*s 
-
-
-
-
+a="o   |    \n x00" b=" o  |    \n x01" c="  o |    \n x02" s=1000 
+d="   o|    \n x03" e="    o    \n x04" f="    |o   \n x05" nl="\n "
+g="    | o  \n x06" h="    |  o \n x07" i="    |   o\n x08" mm="M  1"
+j="o---+----\n x10" k="-o--+----\n x11" l="--o-+----\n x12" qm="  Q0"
+m="---o+----\n x13" n="----o----\n x14" o="----+o---\n x15" hm=mm+qm
+p="----+-o--\n x16" q="----+--o-\n x17" r="----+---o\n x18" dm="DST "
+aa="0" bb=ls+"1" cc=ls2+"2" dd=ls2+ld+"3" ee=ls2+ld+ls+"4"  xs="x"
+z=ls+ld+ls2+"0" y=ld+ls2+"1" x=ls2+"2" w=ls+"3" v="4" 
+xm=a+b+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r yu=bb+cc+dd+ee yd=z+y+x+w
+lo="\n\n\n  LOADING\n\n\n DST -" er=lo="\n\n\n   ERROR\n\n\n DST -"
+nw=lo="\n\n    NO\n WAYPOINT\n\n\n DST -" pt=2 ht=4 GOTO15
+pt=-:tPit+45 ht=:tHdg+45 di=:tDist/s*s pt+=(89-pt)*(pt>89) pt*=(pt>0)
+pt=pt/18/s*s ht+=(89-ht)*(ht>89) ht=(ht>0)*ht/10/s*s hh=hm-(:sy<4)-mm
+ht=xs+(pt==2)+ht t=xm-ht-a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r u=hh-qm-u
+:NavGrid=u+nl+yu-pt-bb-cc-dd-ee+t+yd-pt-z-y-x-w-dm+di GOTO13/(di>"9")
+xx/=di=="LOADING" :NavGrid=u+nl+lo di=:tDist GOTO17-4*(di<"A")
+xx/=:wStr=="" :NavGrid=u+nl+nw di=:tDist GOTO18-5*(di<"A")
+xx/=:sy<9 :NavGrid=u+nl+er di=:tDist GOTO19-6*(di<"A")
+:NavGrid=u+:sy di=:tDist GOTO20-7*(di<"A")
 < ------------------- This line is 70 chars long ------------------- >
 
 navgrid.yolol
@@ -29,4 +29,3 @@ PROFESSIONAL CHIP REQUIRED
 
 This is an all-in-one chip that
 
-u=hm-u
