@@ -4,8 +4,8 @@ u=e*3/13 l=2*o mm=l*13/19 k=e*3/19 :sy=0 x/=so q=15 sm=c ss=c
 rr="ISAN2 :_\n     " xm="\nX: " ym="\nY: " zm="\nZ: " nn=l*13/3
 ej=17*sp h="Q" pj=15-pr b=0.5 p=1000000 :at=mr :bt=br :ct=cr :dt=z x=0
 t=(p-:a)^2 i=(p-:b)^2 g=(p-:c)^2 f=(p-:d)^2 :sy=jj++%4+4/(:sy>3) gotoq
-h="M" t=(p-:a)^2 er=(t-el)/4 el=t x/=:a :at=br x=8 :sy=1 gotopj// ISAN
-i=(p-:a)^2 fr=(i-fl)/4 fl=i x/=:a :at=cr x=9 :sy=2 gotopj//     From
+h="M" t=(p-:a)^2 er=(t-el)/4 el=t x/=:a :at=br x=8 :sy=1 gotopj
+i=(p-:a)^2 fr=(i-fl)/4 fl=i x/=:a :at=cr x=9 :sy=2 gotopj// ISAN From
 g=(p-:a)^2 gr=(g-gl)/4 gl=g x/=:a :at=z x=10 :sy=3 gotopj// Collective
 f=(p-:a)^2 hr=(f-hl)/4 hl=f x/=:a :at=mr x=7 :sy=0 gotopj// v2.5.3
 x^=1 st=:_!=c :_=rr+"\n\n no signal\n " goto 11*(:a==0)*st

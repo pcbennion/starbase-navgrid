@@ -13,14 +13,14 @@ g=(p-:i)^2 gr=(g-gl)/4 gl=g x/=:a*:i :it=d r=7 h=3 GOTO w+p*(:_==s)
 f=(p-:i)^2 hr=(f-hl)/4 hl=f x/=:a*:i :it=a r=4 h=0 GOTO w+p*(:_==s)
 x=1^1 :sy="\n\nReceiver Error!" :U=:sy GOTO 14+p*(:_==s)
 :sy="\n\nAdvanced Chip Required!" :U=:sy GOTO 15+p*(:_==s)
-t+=er i+=fr g+=gr f+=hr r*=h==:sy      // UVector by StandPeter
+t+=er i+=fr g+=gr f+=hr r*=h==:sy            // isan_fwd by StandPeter
 x=(t+i)/e+g/u-f/k y=i/l-t/mm+(g+f)/nn z=(g+f-t-i)/o xx=x j=y r*=h==:sy
 zz=z x-=:x y-=:y z-=:z q=SQRT(x^2+y^2+z^2) :Ux=x/q :Uy=y/q :Uz=z/q
 :U=xm+xx/N*N+ym+j/N*N+zm+zz/N*N+m1+:Ux+m2+:Uy+m3+:Uz GOTO 6+r*(h==:sy)
-:sy=m+ol :U=m+ol GOTO 20*(:_==s)       // Based on ISAN by Collective
+:sy=m+ol :U=m+ol GOTO 20*(:_==s) // Based on ISAN v2.5.3 by Collective
 < ------------------- This line is 70 chars long ------------------- >
 
-ivector.yolol
+isan_fwd.yolol
     by StandPeter
 
 BASED ON ISAN 2 by Collective (GPLv3): isan.to/doc
@@ -38,43 +38,18 @@ https://en.wikipedia.org/wiki/Euler_angles
 The x-y-z fields of the U vector are saved to :Ux, :Uy, and :Uz,
 respectively.
 
-CODE COMMENTS:
-lines 1-5: Set up variables and constants.
+CODE USED FROM ISAN2:
+In general, all code was edited to use recievers e, f, g, and h
+instead of a, b, c, and d, and power operations were introduced to
+save space.
 
-line 6: Quad ISAN readings. If using mono or a nonessential receiver
-has been lost by this or another quad array, fall through to the next
-line.
+lines 1-5: Set up variables and constants. Some constants were carried
+over from ISAN but many were renamed to save space.
 
-line 7: Tell other recievers to switch to mono and wait for the main
-ISAN :a receiver to switch to "west", indicating that it is also
-rotating through ISAN transmitters in mono mode. Print an error until
-that happens.
+line 8: QUAD ISAN readings.
 
-line 8: Sync up the mono receiver with the main ISAN mono receiver so
-readings from the same transmitter at the same time.
+line 10-13: MONO ISAN readings and prediction calculations.
 
-lines 9-12: Not sequential. Mono mode ISAN readings, rotating through
-ISAN transmitters one at a time. Fall through to line 13 if the :i
-receiver is missing or out of range.
+line 16-17: ISAN prediction and position calculations.
 
-line 13: Catch errors due to reciever problems and print an error.
-
-line 14: Prediction mode calculations from ISAN. If the ISAN mono
-reciever and the :i reciver are out of sync, go to line 7 to restart
-the synchronization process.
-
-line 15: Position calculations from ISAN.
-
-line 16: Compute difference between this ISAN array and the main ISAN
-array and normalize the result to get the Tait-Bryan X vector. Save
-to :Ux, :Uy, and :Uz to keep the variables distinct from ISAN position
-
-line 17: Catch syntax errors due to basic chips and print an error
-
-line 18: Print out the position of this ISAN array and the resulting
-X vector. Go back to take readings from transmitters, or go to line 7
-to restart sync if mono is out of sync.
-
-line 19: Catch if :at has gone missing and go to line 13.
-
-line 20: Display "ISAN Offline" until ISAN leaves streaming mode
+line 19: Text screen formatting for x, y, and z.

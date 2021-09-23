@@ -1,21 +1,44 @@
-rr="\n      " lo="\nLOADING...\n" n="\n " im=20 m="\n\n" er="NONE"
-i+=(i<1) idx=i-6/(i>6) wn="" w="\nwp0"-(i>9)+i GOTO17+idx/5
+rr="\n      " lo="\nLOADING...\n" n="\n " im=20 m="\n\n" H=1000 l="/"
+er="NONE" i+=(i<1) idx=i-6/(i>6) wn="" w="\nnp0"-(i<10)+i GOTO17+idx/5
 p1="X+:\nPrograde1" p2="X-:\nRetrograde2" p3="Z+:\nRadial3" nn="name="
 p4="Z-:\nAnti-radial4" p5="Y+:\nNormal5" p6="Y-:\nAnti-normal6" eq="="
 wn="Preset "+p1+p2+p3+p4+p5+p6-i-p1-p2-p3-p4-p5-p6 v=i-1 nn=n+nn GOTO7
-:NavPt=rr+i+"/"+im+lo+wn c=v-(nn-eq) c-=--v x/=c==eq wn=c+wn GOTO6
-l="/" wh="\nwp" nm="\n  RENAME\n   MODE\nname=" :wStr=v x/=v=="" wn=er
-x=:NavPt=="" rm=rr+i+l+im :NavPt=rm+m+wn x/=x*(v=="") :NavPt="" GOTO16
-di=:wup*(i<=im)-:wdn*(i>1)/(1-:wset) :wup=0 :wdn=0 i+=di GOTO8-p*di
-wn="NO NAME" w="\nwp0"-(i>9)+i v=w+n+:x/H*H+n+:y/H*H+n+:z/H*H+nn+wn
-IF i==7 THEN:wp07=v ENDIF i==8 THEN:wp08=v ENDIF i==9 THEN:wp09=v END
-IFi==10 THEN:wp10=v ENDIFi==11 THEN:wp11=v ENDIFi==12 THEN:wp12=v END
-IFi==13 THEN:wp13=v ENDIFi==14 THEN:wp14=v ENDIFi==15 THEN:wp15=v END
-IFi==16 THEN:wp16=v ENDIFi==17 THEN:wp17=v ENDIFi==18 THEN:wp18=v END
-IFi==19 THEN:wp19=v ENDIFi==20 THEN:wp20=v END :wset=0 GOTO8
-wn=:NavPt-nm-nn-eq-wh x=wn!="" :NavPt=nm+wn v=w+:wStr+nn+wn GOTO11+5*x
-a=:wp07 b=:wp08 c=:wp09 d=:wp10 e=:wp11 v=a+b+c+d+e-w-a-b-c-d-e GOTO6
-a=:wp12 b=:wp13 c=:wp14 d=:wp15 e=:wp16 v=a+b+c+d+e-w-a-b-c-d-e GOTO6
-a=:wp17 b=:wp18 c=:wp19 d=:wp20 v=a+b+c+d-w-a-b-c-d GOTO6
-wn="ERROR:\n No Memory" :wStr="" GOTO8
+:NavPt=rr+i+l+im+lo+wn :d=a v-=nn-eq c=v c-=v-- x/=c!=eq wn=c+wn GOTO6
+wh="\nnp" nm="\n\nRENAME MODE"+nn IF v<="" THEN v="" wn=er END :nStr=v
+x=:NavPt=="" rm=rr+i+l+im :NavPt=rm+m+wn x/=x*(v>"6") :NavPt="" GOTO16
+di=:nUp*(i<im)-:nDn*(i>1)/(1-:nSet) :nUp=0 :nDn=0 i+=di GOTO8-9*ABS di
+x/=i>6 wn="NO NAME" :nStr=n+:x/H*H+n+:y/H*H+n+:z/H*H v=w+:nStr+nn+wn
+IF i==7 THEN:np07=v ENDIF i==8 THEN:np08=v ENDIF i==9 THEN:np09=v END
+IFi==10 THEN:np10=v ENDIFi==11 THEN:np11=v ENDIFi==12 THEN:np12=v END
+IFi==13 THEN:np13=v ENDIFi==14 THEN:np14=v ENDIFi==15 THEN:np15=v END
+IFi==16 THEN:np16=v ENDIFi==17 THEN:np17=v ENDIFi==18 THEN:np18=v END
+IFi==19 THEN:np19=v ENDIFi==20 THEN:np20=v END :nSet=0 GOTO8
+wn=:NavPt-nm-nn-eq-wh x=wn=="" :NavPt=nm+wn v=w+:nStr+nn+wn GOTO11+5*x
+a=:np07 b=:np08 c=:np09 d=:np10 e=:np11 v=a+b+c+d+e-w-a-b-c-d-e GOTO6
+a=:np12 b=:np13 c=:np14 d=:np15 e=:np16 v=a+b+c+d+e-w-a-b-c-d-e GOTO6
+a=:np17 b=:np18 c=:np19 d=:np20 v=a+b+c+d-w-a-b-c-d GOTO6
+wn="ERROR:\n No Memory" :nStr="" GOTO8
 < ------------------- This line is 70 chars long ------------------- >
+
+ navpt.yolol
+    by StandPeter
+
+< ------------------- This line is 70 chars long ------------------- >
+
+This is a system for storing and retrieving coordinate sets within
+formatted strings to save memory chip space. Outputs a human-readable
+coordinate in x-y-z format that will be processed further by
+euler_navpoint.yolol.
+
+This system supports:
+- 6 presets that tell the euler chip(s) to navigate along various
+directions instead of to a fixed point.
+- 14 user-defined and namable coordinate slots.
+
+Features:
+- NavPts can be renamed by setting the main display to "" then
+entering a name at the prompt. There is no size limit for name strings
+but the substrings "\nwp", "=", and "\n name" are not allowed.
+- Automatically catches errors due to missing memory, so fewer memory
+chips can be used if desired.
+- Output strings can be viewed using a display named "nStr".

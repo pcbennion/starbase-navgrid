@@ -1,22 +1,42 @@
-p=180 p2=360 :tDist="LOADING" t="9843" d=10 l="/" wi=3 n=-1 x=1
-wi=3 m=0 pre=0 ws=:wstr s=ws sn=1-2*(ws%2) pre=1 GOTO 18+ws/2
+p=180 p2=360 :tDist="LOADING" t="9843" d=10 l="/" wi=3 n=-1 x=1 H=1000
+wi=3 m=0 pre=0 ws=:nStr s=ws sn=1-2*(ws%2) pre=1 GOTO 18+ws/2
 c=s c-=--s x/=c>l q=5*(c>4)+2*(t>(t-c)) q+=q<c q+=q<c m+=q*d^n++ GOTO3
 IF c=="-" THEN m*=-1 s-- END wi-- wx=m s-- s-- x/=wi wy=m x/=wi-1 wz=m
-m=0 n=-1 x=1 x/=wi GOTO3*(ws==:wstr)
-s0=:sy x/=(:sy>9)*(:wstr=="") :tDist="ERROR" GOTO6*(ws==:wstr)
-GOTO7+(s0!=:sy)-p*(ws!=:wstr)
-:tPit=tp+p2*(tp<-p)-p2*(tp>p) :tHdg=th+p2*(th<-p)-p2*(th>p) GOTO9+pre
+m=0 n=-1 x=1 x/=wi GOTO3*(ws==:nStr)
+s0=:sy x/=(:sy>9)*(:nStr=="") :tDist="ERROR" GOTO6*(ws==:nStr)
+GOTO7+(2-pre)*(s0!=:sy)-p*(ws!=:nStr)
+GOTO10
 w1=wx-:x w3=wy-:y w2=wz-:z d=SQRT(w1^2+w2^2+w3^2) w1/=d w2/=d w3/=d
-wp=ASIN w3 wh=(1-2*(w1>0))*ACOS(w2/SQRT(1-w3^2))
-x1=:Ux x2=:Uz x3=:Uy y1=-:Vx y2=-:Vz y3=-:Vy
+x1=:Ux x2=:Uz x3=:Uy y1=:Vx y2=:Vz y3=:Vy d=d/H*H
 ps=(1-2*(x1>0))*ACOS(x2/SQRT(1-x3^2)) ph=ASIN(y1*cos(ps)+y2*sin(ps))
-:Pit=ASIN x3 :Hdg=ps u=1-2*(ph<0) :Rol=ph+(u*180-2*ph)*(y3>0) s0=:sy
-wh=(wh-:Hdg)*COS wp wp-=:Pit sr=SIN :Rol cr=COS :Rol tp=wp*cr+wh*sr
-:tDist=d th=-wp*sr+wh*cr GOTO16-8*(s0!=:sy)/(:sy<9)-p*(ws!=:wstr)
-GOTO6*(ws==:wstr)
+:Pit=ASIN x3 :Hdg=ps u=1-2*(ph<0) :Rol=ph+(u*180-2*ph)*(y3>0)
+wp=ASIN w3 wh=(1-2*(w1>0))*ACOS(w2/SQRT(1-w3^2)) wh=(wh-:Hdg)*COS wp
+wp-=:Pit sr=SIN :Rol cr=COS :Rol tp=wp*cr+wh*sr th=-wp*sr+wh*cr s0=:sy
+:tPit=tp+p2*(tp<-p)-p2*(tp>p) :tHdg=th+p2*(th<-p)-p2*(th>p) :tDist=d
+r=7+pre GOTO16-r*(s0!=:sy)/(:sy<9)-p*(ws!=:nStr)
+GOTO6*(ws==:nStr)
+w1=1*sn w2=0 w3=0 d="-" GOTO6*(ws==:nStr)
+w1=0 w2=1*sn w3=0 d="-" GOTO6*(ws==:nStr)
+w1=0 w2=0 w3=1*sn d="-" GOTO6*(ws==:nStr)
+< ------------------- This line is 70 chars long ------------------- >
 
-w1=1*sn w2=0 w3=0 d="-" GOTO6-p*(ws!=:wstr)
-w1=0 w2=1*sn w3=0 d="-" GOTO6-p*(ws!=:wstr)
-w1=0 w2=0 w3=1*sn d="-" GOTO6-p*(ws!=:wstr)
+euler_aio.yolol
+    by StandPeter
 
+< ------------------- This line is 70 chars long ------------------- >
 
+PROFESSIONAL CHIP REQUIRED
+
+Combines all Professional Chip (read: sinusoidal) operations for
+NavGrid into a single chip because the Xhalium can still be very
+expensive.
+
+This combined chip reduces the refresh rate of the NavGrid system by
+half.
+
+Functionality includes:
+- Compute current Roll, Pitch, and Heading (euler_attitude.yolol)
+- Parse waypoint coordinates and compute fixed-coordinate waypoint
+direction (euler_waypoint.yolol)
+- Compute relative Pitch and Heading to target waypoint
+(euler_target.yolol)

@@ -1,26 +1,26 @@
 N=1000 pr=0 o=160000 e=8*o p=1000000 r=1 m="\n " syn=m+m+m+"   SYNC"
 d="origin_" a=d+"north" b=d+"south" c=d+"east" d+="west" w=17-pr
-u=e*3/13 l=2*o mm=l*13/19 k=e*3/19 nn=l*13/3 :mt=a :nt=b :ot=c :pt=d
-xm="\nx: " ym="\ny: " zm="\nz: " m1="\nUx: " m2="\nUy: " m3="\nUz: "
+u=e*3/13 l=2*o mm=l*13/19 k=e*3/19 nn=l*13/3 :it=a :jt=b :kt=c :lt=d
+xm="\nx: " ym="\ny: " zm="\nz: " m1="\nVx: " m2="\nVy: " m3="\nVz: "
 ol="\n\n   ISAN2\n  OFFLINE" s="ISAN2 :_\n     "+ol h=10 s0=-1
 x/=:a :V=syn wt=3 IF h!=s0 THEN h=:sy s0=:sy GOTO6 END GOTO6+(:sy!=s0)
 h=:sy s0=-1 x=h>3 wt-=(wt>2)*x^pr r=2+(2+h)*0^x GOTO 7+(r-1)*(1>wt--)
-t=(p-:m)^2 i=(p-:n)^2 g=(p-:o)^2 f=(p-:p)^2 x/=:a*:m h=h++%4+4 GOTO17
+t=(p-:i)^2 i=(p-:j)^2 g=(p-:k)^2 f=(p-:l)^2 x/=:a*:i h=h++%4+4 GOTO17
 x^=1 :V=m+"\n QUAD LOST\n Switching\n to MONO" :sy=0 wt=3 GOTO7
-t=(p-:m)^2 er=(t-el)/4 el=t x/=:a*:m :mt=b r=5 h=1 GOTO w+p*(:_==s)
-i=(p-:m)^2 fr=(i-fl)/4 fl=i x/=:a*:m :mt=c r=6 h=2 GOTO w+p*(:_==s)
-g=(p-:m)^2 gr=(g-gl)/4 gl=g x/=:a*:m :mt=d r=7 h=3 GOTO w+p*(:_==s)
-f=(p-:m)^2 hr=(f-hl)/4 hl=f x/=:a*:m :mt=a r=4 h=0 GOTO w+p*(:_==s)
+t=(p-:i)^2 er=(t-el)/4 el=t x/=:a*:i :it=b r=5 h=1 GOTO w+p*(:_==s)
+i=(p-:i)^2 fr=(i-fl)/4 fl=i x/=:a*:i :it=c r=6 h=2 GOTO w+p*(:_==s)
+g=(p-:i)^2 gr=(g-gl)/4 gl=g x/=:a*:i :it=d r=7 h=3 GOTO w+p*(:_==s)
+f=(p-:i)^2 hr=(f-hl)/4 hl=f x/=:a*:i :it=a r=4 h=0 GOTO w+p*(:_==s)
 x=1^1 :sy="\n\nReceiver Error!" :V=:sy GOTO 14+p*(:_==s)
 :sy="\n\nAdvanced Chip Required!" :V=:sy GOTO 15+p*(:_==s)
-t+=er i+=fr g+=gr f+=hr r*=h==:sy      // ISAN_dwn by StandPeter
+t+=er i+=fr g+=gr f+=hr r*=h==:sy            // isan_dwn by StandPeter
 x=(t+i)/e+g/u-f/k y=i/l-t/mm+(g+f)/nn z=(g+f-t-i)/o xx=x j=y r*=h==:sy
 zz=z x-=:x y-=:y z-=:z q=SQRT(x^2+y^2+z^2) :Vx=x/q :Vy=y/q :Vz=z/q
 :V=xm+xx/N*N+ym+j/N*N+zm+zz/N*N+m1+:Vx+m2+:Vy+m3+:Vz GOTO 6+r*(h==:sy)
-:sy=m+ol :V=m+ol GOTO 20*(:_==s)       // Based on ISAN by Collective
+:sy=m+ol :V=m+ol GOTO 20*(:_==s) // Based on ISAN v2.5.3 by Collective
 < ------------------- This line is 70 chars long ------------------- >
 
-ivector.yolol
+isan_dwn.yolol
     by StandPeter
 
 BASED ON ISAN 2 by Collective (GPLv3): isan.to/doc
@@ -29,52 +29,27 @@ BASED ON ISAN 2 by Collective (GPLv3): isan.to/doc
 
 ADVANCED CHIP REQUIRED
 
-Provides the normalized X ("forward") vector - called U here for
-clarity - used in Tait-Bryan attitude calculations, providing heading
-and pitch in a fixed-coordinate system.
+Provides the normalized Y ("down") vector - called V here for
+clarity - used in Tait-Bryan attitude calculations, providing roll in
+a fixed coordinate system.
 
 https://en.wikipedia.org/wiki/Euler_angles
 
-The x-y-z fields of the U vector are saved to :Vx, :Vy, and :Vz,
+The x-y-z fields of the V vector are saved to :Vx, :Vy, and :Vz,
 respectively.
 
-CODE COMMENTS:
-lines 1-5: Set up variables and constants.
+CODE USED FROM ISAN2:
+In general, all code was edited to use recievers i, j, k, and l
+instead of a, b, c, and d, and power operations were introduced to
+save space.
 
-line 6: Quad ISAN readings. If using mono or a nonessential receiver
-has been lost by this or another quad array, fall through to the next
-line.
+lines 1-5: Set up variables and constants. Some constants were carried
+over from ISAN but many were renamed to save space.
 
-line 7: Tell other recievers to switch to mono and wait for the main
-ISAN :a receiver to switch to "west", indicating that it is also
-rotating through ISAN transmitters in mono mode. Print an error until
-that happens.
+line 8: QUAD ISAN readings.
 
-line 8: Sync up the mono receiver with the main ISAN mono receiver so
-readings from the same transmitter at the same time.
+line 10-13: MONO ISAN readings and prediction calculations.
 
-lines 9-12: Not sequential. Mono mode ISAN readings, rotating through
-ISAN transmitters one at a time. Fall through to line 13 if the :m
-receiver is missing or out of range.
+line 16-17: ISAN prediction and position calculations.
 
-line 13: Catch errors due to reciever problems and print an error.
-
-line 14: Prediction mode calculations from ISAN. If the ISAN mono
-reciever and the :m reciver are out of sync, go to line 7 to restart
-the synchronization process.
-
-line 15: Position calculations from ISAN.
-
-line 16: Compute difference between this ISAN array and the main ISAN
-array and normalize the result to get the Tait-Bryan X vector. Save
-to :Vx, :Vy, and :Vz to keep the variables distinct from ISAN position
-
-line 17: Catch syntax errors due to basic chips and print an error
-
-line 18: Print out the position of this ISAN array and the resulting
-X vector. Go back to take readings from transmitters, or go to line 7
-to restart sync if mono is out of sync.
-
-line 19: Catch if :at has gone missing and go to line 13.
-
-line 20: Display "ISAN Offline" until ISAN leaves streaming mode
+line 19: Text screen formatting for x, y, and z.

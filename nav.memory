@@ -1,10 +1,10 @@
 tPit    // Pitch to target
 tHdg    // Heading to target
 tDist   // Distance to target
-
-wStr    // Waypoint string containing x, y, and z coords
-wp07    // Waypoint 7
-wp08    // Waypoint 8
-wp09    // Waypoint 9
-wp10    // Waypoint 10
-wp11    // Waypoint 11
+_       // ISAN display (in case anyone doesn't want to have it)
+nStr    // Waypoint string containing x, y, and z coords
+np07    // Waypoint 7
+np08    // Waypoint 8
+np09    // Waypoint 9
+np10    // Waypoint 10
+np11    // Waypoint 11
