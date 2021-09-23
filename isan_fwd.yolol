@@ -1,16 +1,16 @@
 N=1000 pr=0 o=160000 e=8*o p=1000000 r=1 m="\n " syn=m+m+m+"   SYNC"
 d="origin_" a=d+"north" b=d+"south" c=d+"east" d+="west" w=17-pr
-u=e*3/13 l=2*o mm=l*13/19 k=e*3/19 nn=l*13/3 :it=a :jt=b :kt=c :lt=d
+u=e*3/13 l=2*o mm=l*13/19 k=e*3/19 nn=l*13/3 :et=a :ft=b :gt=c :ht=d
 xm="\nx: " ym="\ny: " zm="\nz: " m1="\nUx: " m2="\nUy: " m3="\nUz: "
 ol="\n\n   ISAN2\n  OFFLINE" s="ISAN2 :_\n     "+ol h=10 s0=-1
 x/=:a :U=syn wt=3 IF h!=s0 THEN h=:sy s0=:sy GOTO6 END GOTO6+(:sy!=s0)
 h=:sy s0=-1 x=h>3 wt-=(wt>2)*x^pr r=2+(2+h)*0^x GOTO 7+(r-1)*(1>wt--)
-t=(p-:i)^2 i=(p-:j)^2 g=(p-:k)^2 f=(p-:l)^2 x/=:a*:i h=h++%4+4 GOTO17
+t=(p-:e)^2 i=(p-:f)^2 g=(p-:g)^2 f=(p-:h)^2 x/=:a*:e h=h++%4+4 GOTO17
 x^=1 :U=m+"\n QUAD LOST\n Switching\n to MONO" :sy=0 wt=3 GOTO7
-t=(p-:i)^2 er=(t-el)/4 el=t x/=:a*:i :it=b r=5 h=1 GOTO w+p*(:_==s)
-i=(p-:i)^2 fr=(i-fl)/4 fl=i x/=:a*:i :it=c r=6 h=2 GOTO w+p*(:_==s)
-g=(p-:i)^2 gr=(g-gl)/4 gl=g x/=:a*:i :it=d r=7 h=3 GOTO w+p*(:_==s)
-f=(p-:i)^2 hr=(f-hl)/4 hl=f x/=:a*:i :it=a r=4 h=0 GOTO w+p*(:_==s)
+t=(p-:e)^2 er=(t-el)/4 el=t x/=:a*:e :et=b r=5 h=1 GOTO w+p*(:_==s)
+i=(p-:e)^2 fr=(i-fl)/4 fl=i x/=:a*:e :et=c r=6 h=2 GOTO w+p*(:_==s)
+g=(p-:e)^2 gr=(g-gl)/4 gl=g x/=:a*:e :et=d r=7 h=3 GOTO w+p*(:_==s)
+f=(p-:e)^2 hr=(f-hl)/4 hl=f x/=:a*:e :et=a r=4 h=0 GOTO w+p*(:_==s)
 x=1^1 :sy="\n\nReceiver Error!" :U=:sy GOTO 14+p*(:_==s)
 :sy="\n\nAdvanced Chip Required!" :U=:sy GOTO 15+p*(:_==s)
 t+=er i+=fr g+=gr f+=hr r*=h==:sy            // isan_fwd by StandPeter
