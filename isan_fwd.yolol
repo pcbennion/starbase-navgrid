@@ -18,38 +18,39 @@ x=(t+i)/e+g/u-f/k y=i/l-t/mm+(g+f)/nn z=(g+f-t-i)/o xx=x j=y r*=h==:sy
 zz=z x-=:x y-=:y z-=:z q=SQRT(x^2+y^2+z^2) :Ux=x/q :Uy=y/q :Uz=z/q
 :U=xm+xx/N*N+ym+j/N*N+zm+zz/N*N+m1+:Ux+m2+:Uy+m3+:Uz GOTO 6+r*(h==:sy)
 :sy=m+ol :U=m+ol GOTO 20*(:_==s) // Based on ISAN v2.5.3 by Collective
-< ------------------- This line is 70 chars long ------------------- >
+// ------------------ This line is 70 chars long ------------------- >
 
-isan_fwd.yolol
-    by StandPeter
+// isan_fwd.yolol
+//     by StandPeter
 
-BASED ON ISAN 2 by Collective (GPLv3): isan.to/doc
+// BASED ON ISAN 2 by Collective (GPLv3): isan.to/doc
 
-< ------------------- This line is 70 chars long ------------------- >
+// ------------------ This line is 70 chars long ------------------- >
 
-ADVANCED CHIP REQUIRED
+// ADVANCED CHIP REQUIRED
 
-Provides the normalized X ("forward") vector - called U here for
-clarity - used in Tait-Bryan attitude calculations, providing heading
-and pitch in a fixed-coordinate system.
+// Provides the normalized X ("forward") vector - called U in this
+// project to reduce name collisions - used in Tait-Bryan attitude
+// calculations, providing pitch and heading in a fixed coordinate
+// system.
 
-https://en.wikipedia.org/wiki/Euler_angles
+// https://en.wikipedia.org/wiki/Euler_angles
 
-The x-y-z fields of the U vector are saved to :Ux, :Uy, and :Uz,
-respectively.
+// The x-y-z fields of the U vector are saved to :Ux, :Uy, and :Uz,
+// respectively.
 
-CODE USED FROM ISAN2:
-In general, all code was edited to use recievers e, f, g, and h
-instead of a, b, c, and d, and power operations were introduced to
-save space.
+// CODE USED FROM ISAN2:
+// In general, all code was edited to use recievers e, f, g, and h
+// instead of a, b, c, and d, and power operations were introduced to
+// save space.
 
-lines 1-5: Set up variables and constants. Some constants were carried
-over from ISAN but many were renamed to save space.
+// lines 1-5: Set up variables and constants. Some constants were
+// carried over from ISAN but many were renamed to save space.
 
-line 8: QUAD ISAN readings.
+// line 8: QUAD ISAN readings.
 
-line 10-13: MONO ISAN readings and prediction calculations.
+// line 10-13: MONO ISAN readings and prediction calculations.
 
-line 16-17: ISAN prediction and position calculations.
+// line 16-17: ISAN prediction and position calculations.
 
-line 19: Text screen formatting for x, y, and z.
+// line 19: Text screen formatting for x, y, and z.

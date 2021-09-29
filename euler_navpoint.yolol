@@ -1,0 +1,21 @@
+o=90 p=180 q=360 u=40 v=50 h=0.5 ds="$" ns="" nd=0 t="9843" r=17 GOTO3
+i=np/p i+=h-2*(i>h) :nPit=np-ap :nHdg=(nh-ah)*4*i*(1-ABS i) :nDist=nd
+:nStat="" ap=:Pit ah=:Hdg s0=:sy x=1*nd n1=nx-:x n2=nz-:z n3=ny-:y
+i=n2/SQRT(1-n3^2) np=u*n3^3+v*n3 x=1*nd nd=SQRT(n1^2+n2^2+n3^2)
+nh=(1-2*(n1>0))*(-u*i^3-v*i+o) i/=(:sy!=s0) GOTO2+12*(ns!=:nStr)
+err=0 x=1/:sy x=6-4*(:sy!=s0) GOTOx+(14-x)*(ns!=:nStr)
+s0=:sy err+=2*(err<9)*(:sy>"9") x=7-(err--<1) GOTOx+(14-x)*(ns!=:nStr)
+ns-- p1=" X+:\nPrograde1" p2=" X-:\nRetrograde2" p3=" Z+:\nRadial3"
+p4=" Z-:\nAnti-radial4" p5=" Y+:\nNormal5" p6=" Y-:\nAnti-normal6"
+:nName="Preset"+p1+p2+p3+p4+p5+p6-ns-p1-p2-p3-p4-p5-p6 GOTO11+ns/3
+sn=ns%2 n1=1*sn n2=0 n3=0 nd="-" GOTO6
+sn=ns%2 n1=0 n2=1*sn n3=0 nd="-" GOTO6
+sn=ns%2 n1=0 n2=0 n3=1*sn nd="-" GOTO6
+:nStat="- Loading -" nn="" ns=:nStr s=ns x=1 x/=ns GOTO8
+x/=ns=="" :nStat="NO WAYPOINT" :nName="" GOTO15-(ns!=:nStr)
+m=0 n=-1 x=1 i=3 :nName=nn c=s c-=--s x/=c!=ds nn=c+nn GOTO6+p*(s=="")
+c=s c-=--s x/=c>l q=5*(c>4)+2*(t>(t-c)) q+=q<c q+=q<c m+=q*d^n++ GOTOr
+IF c=="-" THEN m*=-1 s-- END x/=s>"" i-- nx=m x/=i ny=m x/=i-1 nz=m
+x/=s>"" m=0 n=-1 x=1 nd=1 :nX=nx :nY=ny :nZ=nz GOTO17-11*(i<1)
+:nStat="-  ERROR  -" :nName="Bad Format" GOTO20-6*(ns!=:nStr)
+// ------------------ This line is 70 chars long ------------------- >

@@ -1,0 +1,10 @@
+nName   // Navpoint name
+nStat   // Navpoint status. When not "", this gets put on all displays
+
+
+nStr    // Formatted navpoint string
+np07    // Navpoint 7
+np08    // Navpoint 8
+np09    // Navpoint 9
+np10    // Navpoint 10
+np11    // Navpoint 11

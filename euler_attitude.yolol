@@ -1,0 +1,21 @@
+o=90 p=180 q=360 u=40 v=50 h=0.5 GOTO3
+:Pit=u*x3^3+v*x3 :Hdg=ps :Rol=ph+((1-2*(ph<0))*p-2*ph)*(y3>0)
+x1=:Ux x2=:Uz x3=:Uy y1=:Vx y2=:Vz y3=:Vy i=x2/SQRT(1-x3^2) s0=:sy
+ps=(1-2*(x1>0))*(-u*i^3-v*i+o) i=ps/p sps=4*i*(1-ABS i) i+=h-2*(i>h)
+cps=4*i*(1-ABS i) i=y1*cps+y2*sps ph=u*i^3+v*i i/=(:sy!=s0) GOTO2
+err=0 i/=:sy GOTO6-4*(:sy!=s0)
+s0=:sy err+=2*(err<9)*(:sy>"9") GOTO7-(err--<1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ------------------ This line is 70 chars long ------------------- >

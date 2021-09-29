@@ -20,16 +20,17 @@ m=(r*r+j*j+v*v)^b ss=m/dv*A tu=w uv=uu vt=vv w=0 uu=0 vv=0 ej=17 gotox
 st=:_!=c :_=rr+"\n\n   ISAN2\n  OFFLINE" goto 20*st
 // <-------------- this line is 70 characters long ------------------>
 
-isan.yolol
-    by Collective (GPLv3): isan.to/doc
+// isan.yolol
+//     by Collective (GPLv3): isan.to/doc
 
-MODIFIED BY STANDPETER FOR USE BY NAVGRID:
-- Set speed mode to 1.
-- Save xx, yy, zz to :x, :y, :z respectively.
-- line 3: update variable initialization to account for other changes.
-- lines 6-10: Save a synchronization heartbeat to :sy to help keep
-all three ISAN chips in sync, so they will all take readings from the
-same transmitter at the same time and will all move to MONO once any
-of them switch to MONO.
-- lines 6-13: Introduce power operations to save space. Move the catch
-for basic chip syntax errors to line 13.
+// MODIFIED BY STANDPETER FOR USE BY NAVGRID:
+// - Set speed mode to 1.
+// - Save xx, yy, zz to :x, :y, :z respectively.
+// - line 3: update variable initialization to account for other
+// changes.
+// - lines 6-10: Save a synchronization heartbeat to :sy to help keep
+// all three ISAN chips in sync, so they will all take readings from
+// the same transmitter at the same time and will all move to MONO
+// once any of them switch to MONO.
+// - lines 6-13: Introduce power operations to save space. Move the
+// catch for basic chip syntax errors to line 13.
