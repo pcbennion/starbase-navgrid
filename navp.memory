@@ -1,5 +1,5 @@
-nName   // Navpoint name
-nStat   // Navpoint status. When not "", this gets put on all displays
+nStat   // Navpoint status
+
 
 
 nStr    // Formatted navpoint string

@@ -1,21 +1,21 @@
-i+=i<1 v=i-1 :nStat=lm :NavP=rr+lm idx=i-6/(i>6) w=np+is GOTO17+idx
-n="\n" s= "/" lm="- Loading -" x=1 :nStr=v :NavP=rr+:nStat+n+:nName
-di=:nUp-:nDn st=1-:nSet :nSet=0 sv=1-:nSave :nSave=0 :nUp=0 :nDn=0
-x/=sv*st+(i<7) i+=di i+=1*(i>im)-1*(i<1) rr=is+s+im+n GOTO2-(di!=0)
-t=30 H=1000 ds="$" np="%np" om="\nOVERWRITING\nConfirm? " x/=sv GOTO9
-x/=(:nStr!="")*(1-:nSave) :nSave=0 :NavP=rr+om+t%10 GOTO6-4*(t--<1)
-nn=:nName nn=nn-ds-np x/=nn==:nName :nName=nn GOTO7
-v=np+im+" "+:nX/H*H+" "+:nY/H*H+" "+:nZ/H*H+ds+nn GOTO11
-x/=(:nStr!="")*(1-:nSet) :nSet=0 :NavP=rr+om+t%10 GOTO9-7*(t--<1)
-nn="Navpoint "+im v=np+im+" "+:x/H*H+" "+:y/H*H+" "+:z/H*H+ds+nn
-:NavP=rr+"- Saving  -\n"+nn
+i+=i<1 v=i :nStat="" :nName="" idx=i-7/(i>6) w=np+is GOTO17+idx/5
+n="\n\n" r="/20\n" :nStr=v :NavP=is+r+:nStat+n+:nName
+x=1 di=:nUp-:nDn st=1-:nSet :nSet=0 sv=1-:nSave :nSave=0 :nUp=0 :nDn=0
+x/=sv*st+(i<7) i+=di i+=1*(i>20)-1*(i<1) is="0"-(i<10)+i GOTO2-(di!=0)
+t=9 H=1000 ds="$" np="%np" om=n+"OVERWRITING\nConfirm? " x/=sv GOTO9
+x/=(:nStr!="")*(1-:nSave) :nSave=0 :NavP=is+r+om+t GOTO6-4*(t--<1)
+nn=:nName nn=nn-ds-np x/=nn!=:nName :nName=nn GOTO7
+v=np+is+": "+:nX/H*H+" "+:nY/H*H+" "+:nZ/H*H+ds+nn GOTO11
+x/=(:nStr!="")*(1-:nSet) :nSet=0 :NavP=is+r+om+t GOTO9-7*(t--<1)
+nn="Navpoint "+is v=np+is+": "+:x/H*H+" "+:y/H*H+" "+:z/H*H+ds+nn
+:nName=nn :NavP=is+r+"- Saving  -"+n+nn
 IF i==7 THEN:np07=v ENDIF i==8 THEN:np08=v ENDIF i==9 THEN:np09=v END
 IFi==10 THEN:np10=v ENDIFi==11 THEN:np11=v ENDIFi==12 THEN:np12=v END
 IFi==13 THEN:np13=v ENDIFi==14 THEN:np14=v ENDIFi==15 THEN:np15=v END
 IFi==16 THEN:np16=v ENDIFi==17 THEN:np17=v ENDIFi==18 THEN:np18=v END
-IFi==19 THEN:np19=v ENDIFi==20 THEN:np20=v END GOTO2
+IFi==19 THEN:np19=v ENDIFi==20 THEN:np20=v END :nSet=0 :nSave=0 GOTO2
 a=:np07 b=:np08 c=:np09 d=:np10 e=:np11 v=a+b+c+d+e-w-a-b-c-d-e GOTO2
 a=:np12 b=:np13 c=:np14 d=:np15 e=:np16 v=a+b+c+d+e-w-a-b-c-d-e GOTO2
 a=:np17 b=:np18 c=:np19 d=:np20 v=a+b+c+d-w-a-b-c-d GOTO2
-:nName="ERROR:\n No Memory" v="" GOTO2
+:nStat="-  ERROR  -" :nName=" No Memory" v="" GOTO2
 // ------------------ This line is 70 chars long ------------------- >

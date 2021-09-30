@@ -18,18 +18,19 @@ di=:tDist IF di<As THENGOTO13 END xx/=di=="LOADING" :NavGrid=lo GOTO17
 xx/=:nStr=="" :NavGrid=nw GOTO17
 se=0 xx/=(:sy<9)*(:tDist>=As) :NavGrid=er GOTO17
 IF :sy>9 THEN se+=2*(se<10) :NavGrid=:sy END GOTO17+3*(se-->0)
-< ------------------- This line is 70 chars long ------------------- >
+// ------------------ This line is 70 chars long ------------------- >
 
-navgrid.yolol
-    by StandPeter
+// navgrid.yolol
+//     by StandPeter
 
-< ------------------- This line is 70 chars long ------------------- >
+// ------------------ This line is 70 chars long ------------------- >
 
-Translates relative attitude to target into an ascii grid for visual
-navigation. Attitude is rounded to match a 5x9 crosshair-style grid
-due to limitations imposed by the Text Panel display.
+// Translates relative attitude to target into an ascii grid for
+// visual navigation. Attitude is rounded to match a 5x9
+// crosshair-style grid due to limitations imposed by the Text Panel
+// display.
 
-Also displays:
-- Whether ISAN is using MONO ("M") or QUAD ("Q"), in the top right.
-- Distance to target, at the bottom.
-- Messages for waypoint loading, no waypoint, or ISAN errors.
+// Also displays:
+// - Whether ISAN is using MONO ("M") or QUAD ("Q"), in the top right.
+// - Distance to target, at the bottom.
+// - Messages for NavP or ISAN errors
