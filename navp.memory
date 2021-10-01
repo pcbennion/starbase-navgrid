@@ -1,10 +1,10 @@
-nStat   // Navpoint status
-
-
-
-nStr    // Formatted navpoint string
 np07    // Navpoint 7
 np08    // Navpoint 8
 np09    // Navpoint 9
 np10    // Navpoint 10
 np11    // Navpoint 11
+np12    // Navpoint 12
+np13    // Navpoint 13
+np14    // Navpoint 14
+np15    // Navpoint 15
+np16    // Navpoint 16

@@ -1,8 +1,8 @@
 o=90 p=180 u=40 v=50 d=10 h=0.5 ds="$" ns="" nd=0 t="9843" r=17 GOTO3
-i=np/p i+=h-2*(i>h) :nPit=np-ap :nHdg=(nh-ah)*4*i*(1-ABS i) :nDist=nd
-:nStat="" ap=:Pit ah=:Hdg s0=:sy%4 x=1*nd n1=nx-:x n2=nz-:z n3=ny-:y
-i=n2/SQRT(1-n3^2) np=u*n3^3+v*n3 x=1*nd nd=SQRT(n1^2+n2^2+n3^2) k=-9
-nh=(1-2*(n1>0))*(-u*i^3-v*i+o) x=:sy%4 GOTO5-(3+k*(ns!=:nStr))*(x!=s0)
+:nPit=u*n3^3+v*n3 :nHdg=(1-2*(n1>0))*(-u*i^3-v*i+o) :nDist=nd/d^3*d^3
+s0=:sy%4 x=1*nd n1=nx-:x n2=nz-:z n3=ny-:y nd=SQRT(n1^2+n2^2+n3^2)
+:nStat="" x=1*nd n1/=nd n2/=nd n3/=nd
+i=n2/SQRT(1-n3^2) x=:sy%4 GOTO5-(3-9*(ns!=:nStr))*(x!=s0)
 s0=:sy err+=2*(err<9)*(:sy>"9") x=6-(err--<1) GOTOx+(14-x)*(ns!=:nStr)
 s-- s*=s>0 p1="X+:\nPrograde0" p2="X-:\nRetrograde1" p3="Z+:\nRadial2"
 s*=s<7 p4="Z-:\nAnti-radial3" p5="Y+:\nNormal4" p6="Y-:\nAnti-normal5"

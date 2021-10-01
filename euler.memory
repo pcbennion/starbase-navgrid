@@ -1,9 +1,10 @@
 Pit    // Absolute vehicle pitch
 Hdg    // Absolute vehicle heading
 Rol    // Absolute vehicle roll
+nStat  // Navpoint status
+nStr   // Formatted navpoint string
 nPit   // Pitch to navpoint from origin
 nHdg   // Heading to navpoint from origin
-nDist  // Distance to navpoint
+nDist  // Distance to navpoint, rounded to nearest int
 tPit   // Relative pitch to target
 tHdg   // Relative heading to target
-tDist  // Distance to target, rounded to nearest int

@@ -1,23 +1,23 @@
-ls="    |\n " ls2=ls+ls ld="----+----\n " :NavGrid="\n "+ls2+ld+ls2
-a="o   |    \n A00" b=" o  |    \n A01" c="  o |    \n A02" s=1000
-d="   o|    \n A03" e="    o    \n A04" f="    |o   \n A05" nl="\n "
-g="    | o  \n A06" h="    |  o \n A07" i="    |   o\n A08" mm=" M1"
-j="o---+----\n A10" k="-o--+----\n A11" l="--o-+----\n A12" qm="Q 0"
-m="---o+----\n A13" n="----o----\n A14" o="----+o---\n A15" hm=mm+qm
-p="----+-o--\n A16" q="----+--o-\n A17" r="----+---o\n A18" dm="DST "
+ls="    |\n " ls2=ls+ls ld="----+----\n " :NavGrid="\n\n\nINIT" GOTO8
+u=hm-(v<4)-mm-qm-u :NavGrid=u+nl+yu-pt-bb-cc-dd-ee+t+yd-pt-z-y-x-w+di
+pt=-:tPit-44 ht=:Hdg-44 pt=(pt<0)*pt+89 di=dm+:nDist v=:nStat+:sy
+pt=(pt>0)*pt/18/s*s ht=(ht<0)*ht+89 ht=(ht>0)*ht/10/s*s ht+=As+(pt==2)
+t=xm-ht-a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r GOTO2+3*(v-:sy=="")/(v<As)
+ns=:nStat sy=:sy v=ns+sy bk=1/(v>"9") GOTO6-(err--<1)
+err+=err<10 IF ns=="" THEN em=sy ELSE sm=cr+ns END :NavGrid=em GOTO6
+a="o   |    \n 0A0" b=" o  |    \n 1A0" c="  o |    \n 2A0" s=1000
+d="   o|    \n 3A0" e="    o    \n 4A0" f="    |o   \n 5A0" nl="\n "
+g="    | o  \n 6A0" h="    |  o \n 7A0" i="    |   o\n 8A0" mm=" M1"
+j="o---+----\n 0A1" k="-o--+----\n 1A1" l="--o-+----\n 2A1" qm="Q 0"
+m="---o+----\n 3A1" n="----o----\n 4A1" o="----+o---\n 5A1" hm=mm+qm
+p="----+-o--\n 6A1" q="----+--o-\n 7A1" r="----+---o\n 8A1" dm="DST "
 aa="0" bb=ls+"1" cc=ls2+"2" dd=ls2+ld+"3" ee=ls2+ld+ls+"4"  As="A"
- z=ls+ld+ls2+"0"  y=ld+ls2+"1"  x=ls2+"2"  w=ls+"3"  v="4"
-xm=a+b+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r yu=bb+cc+dd+ee yd=z+y+x+w
-lo="\n\n\n  LOADING\n\n\n DST -" er="\n\n\n   ERROR\n\n\n DST -"
-nw="\n\n     NO\n  WAYPOINT\n\n\n DST -" pt=2 ht=4 GOTO15
-pt=-:tPit+45 ht=:tHdg+45 pt+=(89-pt)*(pt>89) pt*=(pt>0) di=:tDist
-pt=pt/18/s*s ht+=(89-ht)*(ht>89) ht=(ht>0)*ht/10/s*s hh=hm-(:sy<4)-mm
-ht=As+(pt==2)+ht t=xm-ht-a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r u=hh-qm-u
-:NavGrid=u+nl+yu-pt-bb-cc-dd-ee+t+yd-pt-z-y-x-w+dm+di GOTO13/(di<As)
-di=:tDist IF di<As THENGOTO13 END xx/=di=="LOADING" :NavGrid=lo GOTO17
-xx/=:nStr=="" :NavGrid=nw GOTO17
-se=0 xx/=(:sy<9)*(:tDist>=As) :NavGrid=er GOTO17
-IF :sy>9 THEN se+=2*(se<10) :NavGrid=:sy END GOTO17+3*(se-->0)
+ z=ls+ld+ls2+"0"  y=ld+ls2+"1"  x=ls2+"2"  w=ls+"3"  v="4" cr="\n\n\n"
+xm=a+b+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r yu=bb+cc+dd+ee yd=z+y+x+w GOTO3
+
+
+
+
 // ------------------ This line is 70 chars long ------------------- >
 
 // navgrid.yolol

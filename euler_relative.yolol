@@ -1,9 +1,9 @@
 o=90 p=180 q=360 u=40 v=50 H=1000 GOTO3
-:tPit=tp+q*(tp<-p)-q*(tp>p) :tHdg=th+q*(th<-p)-q*(th>p) :tDist=nd
-ar=:Rol np=:nPit nh=:nHdg nd=:nDist i=ar/p s0=:sy%4
-sr=4*i*(1-ABS i) i+=.5-2*(i>.5) cr=4*i*(1-ABS i) nd=nd/H*H
-tp=np*cr+nh*sr th=-np*sr+nh*cr x=:sy%4 GOTO2+3*(x==s0)
-s0=:sy err+=2*(err<9)*(:sy>"9") GOTO6-(err--<1)
+:tPit=tp+q*(tp<-p)-q*(tp>p) :tHdg=th+q*(th<-p)-q*(th>p)
+ap=:Pit ah=:Hdg ar=:Rol np=:nPit nh=:nHdg i=np/p i+=h-2*(i>h) s=:sy%4
+np-=ap nh=(nh-ah)*4*i*(1-ABS i) i=ar/p sr=4*i*(1-ABS i) i+=.5-2*(i>.5)
+cr=4*i*(1-ABS i) tp=np*cr+nh*sr th=-np*sr+nh*cr x=:sy%4 GOTO2+3*(x==s)
+s=:sy err+=2*(err<9)*(:sy>"9") GOTO6-(err--<1)
 
 
 
