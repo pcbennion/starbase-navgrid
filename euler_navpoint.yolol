@@ -1,15 +1,15 @@
 o=90 p=180 u=40 v=50 d=10 h=0.5 ds="$" ns="" nd=0 t="9843" r=17 GOTO3
-:nPit=u*n3^3+v*n3 :nHdg=(1-2*(n1>0))*(-u*i^3-v*i+o) :nDist=nd/d^3*d^3
+:nPit=u*n3^3+v*n3 :nHdg=(1-2*(n1>0))*(-u*i^3-v*i+o) :nDist=nd
 s0=:sy%4 x=1*nd n1=nx-:x n2=nz-:z n3=ny-:y nd=SQRT(n1^2+n2^2+n3^2)
-:nStat="" x=1*nd n1/=nd n2/=nd n3/=nd
+:nStat="" x=1*nd n1/=nd n2/=nd n3/=nd nd=nd/1000*1000
 i=n2/SQRT(1-n3^2) x=:sy%4 GOTO5-(3-9*(ns!=:nStr))*(x!=s0)
 s0=:sy err+=2*(err<9)*(:sy>"9") x=6-(err--<1) GOTOx+(14-x)*(ns!=:nStr)
 s-- s*=s>0 p1="X+:\nPrograde0" p2="X-:\nRetrograde1" p3="Z+:\nRadial2"
 s*=s<7 p4="Z-:\nAnti-radial3" p5="Y+:\nNormal4" p6="Y-:\nAnti-normal5"
-:nName="Preset "+p1+p2+p3+p4+p5+p6-s-p1-p2-p3-p4-p5-p6 GOTO11+s/3
-sn=s%2 n1=1*sn n2=0 n3=0 nd="-" :nX=n1 :nY=n3 :nZ=n2 GOTO3
-sn=s%2 n1=0 n2=1*sn n3=0 nd="-" :nX=n1 :nY=n3 :nZ=n2 GOTO3
-sn=s%2 n1=0 n2=0 n3=1*sn nd="-" :nX=n1 :nY=n3 :nZ=n2 GOTO3
+:nName="Preset "+p1+p2+p3+p4+p5+p6-s-p1-p2-p3-p4-p5-p6 GOTO10+s/2
+sn=1-2*(s%2) n1=1*sn n2=0 n3=0 nd="-" :nX=n1 :nY=n3 :nZ=n2 GOTO3
+sn=1-2*(s%2) n1=0 n2=1*sn n3=0 nd="-" :nX=n1 :nY=n3 :nZ=n2 GOTO3
+sn=1-2*(s%2) n1=0 n2=0 n3=1*sn nd="-" :nX=n1 :nY=n3 :nZ=n2 GOTO3
 x=1 x/=ns==:nStr IF :nStat=="" THEN :nStat=ss :nName=nn END GOTO13
 :nStat="- Loading -" nn="" l="/" ns=:nStr s=ns x=1 x/=ns GOTO8
 x/=ns=="" ss="NO WAYPOINT" :nStat=ss nn="    NaN" :nName=nn GOTO13

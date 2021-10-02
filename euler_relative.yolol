@@ -1,4 +1,4 @@
-o=90 p=180 q=360 u=40 v=50 H=1000 GOTO3
+o=90 p=180 q=360 u=40 v=50 h=0.5 GOTO3
 :tPit=tp+q*(tp<-p)-q*(tp>p) :tHdg=th+q*(th<-p)-q*(th>p)
 ap=:Pit ah=:Hdg ar=:Rol np=:nPit nh=:nHdg i=np/p i+=h-2*(i>h) s=:sy%4
 np-=ap nh=(nh-ah)*4*i*(1-ABS i) i=ar/p sr=4*i*(1-ABS i) i+=.5-2*(i>.5)

@@ -1,7 +1,7 @@
 i+=i<1 v=i :nStat="" :nName="" idx=i-7/(i>6) w=np+is GOTO17+idx/5
 n="\n\n" r="/20\n" :nStr=v :NavP=is+r+:nStat+n+:nName
 x=1 di=:nUp-:nDn st=1-:nSet :nSet=0 sv=1-:nSave :nSave=0 :nUp=0 :nDn=0
-x/=sv*st+(i<7) i+=di i+=1*(i>20)-1*(i<1) is="0"-(i<10)+i GOTO2-(di!=0)
+x/=sv*st+(i<7) i+=di i+=1*(i<1)-1*(i>20) is="0"-(i<10)+i GOTO2-(di!=0)
 t=9 H=1000 ds="$" np="%np" om=n+"OVERWRITING\nConfirm? " x/=sv GOTO9
 x/=(:nStr!="")*(1-:nSave) :nSave=0 :NavP=is+r+om+t GOTO6-4*(t--<1)
 nn=:nName nn=nn-ds-np x/=nn!=:nName :nName=nn GOTO7
