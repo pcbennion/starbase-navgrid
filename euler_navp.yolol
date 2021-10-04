@@ -11,11 +11,24 @@ sn=1-2*(s%2) n1=1*sn n2=0 n3=0 nd="-" :nX=n1 :nY=n3 :nZ=n2 GOTO3
 sn=1-2*(s%2) n1=0 n2=1*sn n3=0 nd="-" :nX=n1 :nY=n3 :nZ=n2 GOTO3
 sn=1-2*(s%2) n1=0 n2=0 n3=1*sn nd="-" :nX=n1 :nY=n3 :nZ=n2 GOTO3
 x=1 x/=ns==:nStr IF :nStat=="" THEN :nStat=ss :nName=nn END GOTO13
-:nStat="- Loading -" nn="" l="/" ns=:nStr s=ns x=1 x/=ns GOTO8
+:nStat="[ Loading ]" nn="" l="/" ns=:nStr s=ns x=1 x/=ns GOTO8
 x/=ns=="" ss="NO WAYPOINT" :nStat=ss nn="    NaN" :nName=nn GOTO13
 m=0 n=-1 i=3 :nName=nn c=s c-=--s x/=c!=ds nn=c+nn GOTO16+4*(s=="")
 c=s c-=--s x/=c>l w=5*(c>4)+2*(t>(t-c)) w+=w<c w+=w<c m+=w*d^n++ GOTOr
 IF c=="-" THEN m*=-1 s-- END x/=s>"" i-- nx=m x/=i ny=m x/=i-1 nz=m
 x/=s>"" m=0 n=-1 x=1 nd=1 :nX=nx :nY=ny :nZ=nz GOTO17-15*(i<1)
-ss="-  ERROR  -" :nStat=ss nn="Bad Format" :nName=nn GOTO13
+ss="[  ERROR  ]" :nStat=ss nn="Bad Format" :nName=nn GOTO13
 // ------------------ This line is 70 chars long ------------------- >
+
+// euler_navp.yolol
+//     by StandPeter
+
+// ------------------ This line is 70 chars long ------------------- >
+
+// ADVANCED CHIP REQUIRED
+
+// Computes the Euler Angles of your target navpoint to find its
+// alignment related to your current position.
+
+// Whenever a new navpoint is loaded into nStr, by navp.yolol,
+// this chip decodes it into usable coordinates.

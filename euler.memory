@@ -1,10 +1,19 @@
-Pit    // Absolute vehicle pitch
-Hdg    // Absolute vehicle heading
-Rol    // Absolute vehicle roll
-nStat  // Navpoint status
-nStr   // Formatted navpoint string
-nPit   // Pitch to navpoint from origin
-nHdg   // Heading to navpoint from origin
-nDist  // Distance to navpoint, rounded to nearest int
-tPit   // Relative pitch to target
-tHdg   // Relative heading to target
+Pit
+Hdg
+Rol
+nStat
+nStr
+nPit
+nHdg
+nDist
+tPit
+tHdg
+
+// This is not yolol code. Save all ten lines above to separate field
+// names in a memory chip.
+
+// This chip provides memory for all euler chips used by NavGrid.
+// Variables starting with 'n' are related to to navpoint alignment
+// and processing. Variables starting with 't' represent the Relative
+// heading and pitch to the navpoint target. Veriables with no prefix
+// represent absolute vehicle alignment.

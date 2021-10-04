@@ -19,3 +19,19 @@ s0=:sy err+=2*(err<9)*(:sy>"9") GOTO6-(err--<1)
 
 
 // ------------------ This line is 70 chars long ------------------- >
+
+// euler_attitude.yolol
+//     by StandPeter
+
+// ------------------ This line is 70 chars long ------------------- >
+
+// ADVANCED CHIP REQUIRED
+
+// Computes the Euler Angles of your current vehicle alignment, using
+// the Tait-Bryan variation of the formulae to get familiar roll,
+// pitch, and heading (yaw) values.
+
+// Heading is rotation along the ISAN Y axis (ie :Hdg=0 when you are
+// pointed directly into the belt) and Pitch is inclination along the
+// ISAN Y axis (ie :Pit=90 when you are pointed directly up toward the
+// top of the belt)

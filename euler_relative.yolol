@@ -18,3 +18,14 @@ s=:sy err+=2*(err<9)*(:sy>"9") GOTO6-(err--<1)
 
 
 // ------------------ This line is 70 chars long ------------------- >
+
+// euler_relative.yolol
+//     by StandPeter
+
+// ------------------ This line is 70 chars long ------------------- >
+
+// ADVANCED CHIP REQUIRED
+
+// Subtracts absolute attitude from navpoint alignment, and rotates
+// the result by your current roll to determine the relative pitch and
+// heading to your navpoint target.

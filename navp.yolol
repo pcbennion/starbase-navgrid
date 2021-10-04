@@ -1,0 +1,51 @@
+i+=i<1 v=i :nStat="" :nName="" idx=i-7/(i>6) w=np+is GOTO17+idx/5
+n="\n\n" r="/20\n" :nStr=v :NavP=is+r+:nStat+n+:nName
+x=1 di=:nUp-:nDn st=1-:nSet :nSet=0 sv=1-:nSave :nSave=0 :nUp=0 :nDn=0
+x/=sv*st+(i<7) i+=di i+=1*(i<1)-1*(i>20) is="0"-(i<10)+i GOTO2-(di!=0)
+t=9 H=1000 ds="$" np="%np" om=n+"OVERWRITING\nConfirm? " x/=sv GOTO9
+x/=(:nStr!="")*(1-:nSave) :nSave=0 :NavP=is+r+om+t GOTO6-4*(t--<1)
+nn=:nName nn=nn-ds-np x/=nn!=:nName :nName=nn GOTO7      //NavP.yolol
+v=np+is+": "+:nX/H*H+" "+:nY/H*H+" "+:nZ/H*H+ds+nn GOTO11//for NavGrid
+x/=(:nStr!="")*(1-:nSet) :nSet=0 :NavP=is+r+om+t GOTO9-7*(t--<1)
+nn="Navpoint "+is v=np+is+": "+:x/H*H+" "+:y/H*H+" "+:z/H*H+ds+nn
+:nName=nn :NavP=is+r+"[ Saving  ]"+n+nn                //by StandPeter
+IF i==7 THEN:np07=v ENDIF i==8 THEN:np08=v ENDIF i==9 THEN:np09=v END
+IFi==10 THEN:np10=v ENDIFi==11 THEN:np11=v ENDIFi==12 THEN:np12=v END
+IFi==13 THEN:np13=v ENDIFi==14 THEN:np14=v ENDIFi==15 THEN:np15=v END
+IFi==16 THEN:np16=v ENDIFi==17 THEN:np17=v ENDIFi==18 THEN:np18=v END
+IFi==19 THEN:np19=v ENDIFi==20 THEN:np20=v END :nSet=0 :nSave=0 GOTO2
+a=:np07 b=:np08 c=:np09 d=:np10 e=:np11 v=a+b+c+d+e-w-a-b-c-d-e GOTO2
+a=:np12 b=:np13 c=:np14 d=:np15 e=:np16 v=a+b+c+d+e-w-a-b-c-d-e GOTO2
+a=:np17 b=:np18 c=:np19 d=:np20 v=a+b+c+d-w-a-b-c-d GOTO2
+:nStat="[  ERROR  ]" :nName=" No Memory" v="" GOTO2 //starbase-navgrid
+// ------------------ This line is 70 chars long ------------------- >
+
+// navp.yolol
+//      by StandPeter
+
+// ------------------ This line is 70 chars long ------------------- >
+
+// Loads and saves navpoint strings for use by the NavGrid
+// navigational system. Navpoint strings are not decoded here - see
+// euler_navp.yolol.
+
+// Features:
+// - 6 preset navpoints (one for each cardinal direction X, Y, and Z)
+// - Up to 14 editable user-defined navpoints. Navpoints can be
+//   selected, set, and edited using the controls below
+
+// Controls:
+// - nUp, nDn: Any button; ButtonStyle=1. Increase or decrease the
+// current navpoint index
+// - nSet: Any button; ButtonStyle=1. Set the selected navpoint to the
+// current ISAN coordinates. Press again to confirm overwrite.
+// - nName, nX, nY, nZ: Any display, control, or memory field. Stores
+// the name and coordinates of the current waypoint. Edit the values
+// using the Universal Tool and press nSave to edit the navpoint's
+// data.
+// - nSave: Any button; ButtonStyle=1. Saves any changes to the
+// navpoint since loading. Press again to confirm overwrite.
+
+// Navpoint format:
+// :np<index>="%np<index>: <x coord> <y coord> <z coord>$<name>"
+// example - :np07="%np07: -11603 56513 9640$Origin 14"

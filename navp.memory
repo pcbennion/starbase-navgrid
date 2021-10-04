@@ -1,10 +1,16 @@
-np07    // Navpoint 7
-np08    // Navpoint 8
-np09    // Navpoint 9
-np10    // Navpoint 10
-np11    // Navpoint 11
-np12    // Navpoint 12
-np13    // Navpoint 13
-np14    // Navpoint 14
-np15    // Navpoint 15
-np16    // Navpoint 16
+np07
+np08
+np09
+np10
+np11
+np12
+np13
+np14
+np15
+np16
+
+// This is not yolol code. Save all ten lines above to separate field
+// names in a memory chip.
+
+// This chip provides memory for 10 of the max 14 user-defined
+// navpoints supported by navp.yolol

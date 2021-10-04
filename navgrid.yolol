@@ -27,10 +27,10 @@ yu=nl+bb+cc+dd+ee yd=zz+yy+xx+ww GOTO3
 
 // Translates relative attitude to target into an ascii grid for
 // visual navigation. Attitude is rounded to match a 5x9
-// crosshair-style grid due to limitations imposed by the Text Panel
-// display.
+// crosshair-style grid due to limitations imposed Text Panel space
+// and yolol line length.
 
 // Also displays:
 // - Whether ISAN is using MONO ("M") or QUAD ("Q"), in the top right.
 // - Distance to target, at the bottom.
-// - Messages for NavP or ISAN errors
+// - Messages for NavP or ISAN errors.

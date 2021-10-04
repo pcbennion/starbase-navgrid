@@ -1,10 +1,17 @@
-x       // isan X
-y       // isan Y
-z       // isan Z
-sy      // isan sync heartbeat: 0-3=MONO, 4-7=QUAD, string=ERROR
-Ux      // "fwd" vector X
-Uy      // "fwd" vector Y
-Uz      // "fwd" vector Z
-Vx      // "dwn" vector X
-Vy      // "dwn" vector Y
-Vz      // "dwn" vector Z
+x
+y
+z
+sy
+Ux
+Uy
+Uz
+Vx
+Vy
+Vz
+
+// This is not yolol code. Save all ten lines above to separate field
+// names in a memory chip.
+
+// This chip provides memory for all three ISAN instances required for
+// NavGrid, plus a synchronization heartbeat to ensure maximum
+// accuracy
