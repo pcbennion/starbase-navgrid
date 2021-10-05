@@ -1,0 +1,33 @@
+A="A" n="\n" n3=n+n+n H=1000 pm="\nPit: " hm="\nHdg: " rm="\nRol: "
+xm="\nX: " ym="\nY: " zm="\nZ: "
+m=:nStat IF m>A THEN m=n3+m ELSE m=n+xm+:nx+ym+:ny+zm+:nz END :NavC=m
+at=n+pm+:Pit/H*H+hm+:Hdg/H*H+rm+:Rol/H*H IF :sy>A THEN sy=:sy END m=sy
+e*=e>0 e+=2*(:sy>A)*(e<5) IF e--<1 THEN m=at END :Attitude=m GOTO3
+                                               // extra_displays.yolol
+                                               // by StandPeter
+                                               // for NavGrid v1.0
+                      // https://github.com/pcbennion/starbase-navgrid
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ------------------ This line is 70 chars long ------------------- >
+
+// extra_displays.yolol
+//     by StandPeter
+
+// ------------------ This line is 70 chars long ------------------- >
+
+// This optional chip creates easy displays for your current vehicle
+// attitude and the ISAN coordinates of your navpoint target.

@@ -29,7 +29,7 @@ zz=z x-=:x y-=:y z-=:z q=SQRT(x^2+y^2+z^2) :Ux=x/q :Uy=y/q :Uz=z/q
 
 // ADVANCED CHIP REQUIRED
 
-// Provides the normalized X ("forward") vector - called U in this
+// Calculates the normalized X ("forward") vector - called U in this
 // project to reduce name collisions - used in Tait-Bryan attitude
 // calculations, providing pitch and heading in a fixed coordinate
 // system.

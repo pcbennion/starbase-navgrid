@@ -29,7 +29,7 @@ zz=z x-=:x y-=:y z-=:z q=SQRT(x^2+y^2+z^2) :Vx=x/q :Vy=y/q :Vz=z/q
 
 // ADVANCED CHIP REQUIRED
 
-// Provides the normalized Y ("down") vector - called V in this
+// Calculates the normalized Y ("down") vector - called V in this
 // project to reduce name collisions - used in Tait-Bryan attitude
 // calculations, providing roll in a fixed coordinate system.
 

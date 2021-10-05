@@ -1,0 +1,9 @@
+wx
+wy
+wz
+
+// This is not yolol code. Save all lines above to separate field
+// names in a memory chip.
+
+// This chip provides memory for waypoint coordinates, if those
+// fields don't already have memory.

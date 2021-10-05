@@ -1,0 +1,31 @@
+o=90 p=180 q=360 u=40 v=50 h=0.5 :nStat="" GOTO3
+:nPit=u*n3^3+v*n3 :nHdg=(1-2*(n1>0))*(-u*i^3-v*i+o) :nDist=nd
+s0=:sy%4 x=1*nd n1=:wx-:x n2=:wz-:z n3=:wy-:y
+nd=SQRT(n1^2+n2^2+n3^2) n1/=nd n2/=nd n3/=nd nd=nd/1000*1000
+i=n2/SQRT(1-n3^2) x=:sy%4 GOTO5-(3-9*(ns!=:nStr))*(x!=s0)
+s=:sy err+=2*(err<9)*(:sy>"9") GOTO6-(err--<1) // euler_waypoint.yolol
+                                               // by StandPeter
+                                               // for NavGrid v1.0
+                      // https://github.com/pcbennion/starbase-navgrid
+
+// This optional module replaces navgrid's navpoint manager with any
+// custom waypoint system you prefer.
+
+// To use, save the coordinates of your target waypoint to wx, wy, and
+// wz; or rename the variables above to your desired variables
+
+// This chip replaces navp.yolol and euler_navp.yolol and should not
+// be used alongside them
+
+
+// ------------------ This line is 70 chars long ------------------- >
+
+// euler_waypoint.yolol
+//     by StandPeter
+
+// ------------------ This line is 70 chars long ------------------- >
+
+// ADVANCED CHIP REQUIRED
+
+// Computes the Euler Angles of your target waypoint to find its
+// alignment related to your current position.

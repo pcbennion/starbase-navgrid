@@ -1,12 +1,12 @@
 o=90 p=180 q=360 u=40 v=50 h=0.5 GOTO3
 :Pit=u*x3^3+v*x3 :Hdg=ps :Rol=ph+((1-2*(ph<0))*p-2*ph)*(y3>0)
-x1=:Ux x2=:Uz x3=:Uy y1=:Vx y2=:Vz y3=:Vy i=x2/SQRT(1-x3^2) s0=:sy%4
+x1=:Ux x2=:Uz x3=:Uy y1=:Vx y2=:Vz y3=:Vy i=x2/SQRT(1-x3^2) s=:sy%4
 ps=(1-2*(x1>0))*(-u*i^3-v*i+o) i=ps/p sps=4*i*(1-ABS i) i+=h-2*(i>h)
-cps=4*i*(1-ABS i) i=y1*cps+y2*sps ph=u*i^3+v*i x=:sy%4 GOTO2+3*(x==s0)
-s0=:sy err+=2*(err<9)*(:sy>"9") GOTO6-(err--<1)
-
-
-
+cps=4*i*(1-ABS i) i=y1*cps+y2*sps ph=u*i^3+v*i x=:sy%4 GOTO2+3*(x==s)
+s=:sy err+=2*(err<9)*(:sy>"9") GOTO6-(err--<1) // euler_attitude.yolol
+                                               // by StandPeter
+                                               // for NavGrid v1.0
+                      // https://github.com/pcbennion/starbase-navgrid
 
 
 
