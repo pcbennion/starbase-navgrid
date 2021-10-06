@@ -2,6 +2,8 @@
 
 NavGrid is an all-in-one navigation system for Starbase.
 
+[NavGrid](img/title.jpg)
+
 NavGrid builds upon Collective's ISAN2 GPS system, adding a familiar visual
 interface to supplement ISAN's raw-numbers display.
 
@@ -11,7 +13,7 @@ It features 6 directional presets, up to 14 editable user-defined waypoints,
 and a wide variety of optional displays to help point you whichever direction
 you might be going.
 
-[Navgrid + NavP + ISAN Picture]
+[Navigating in the belt...](img/demo_1.jpg)
 
 NavGrid is designed with the following audiences in mind:
 - Pilots who want to just choose a destination and fly to it, without needing
@@ -23,14 +25,14 @@ screen.
 - Ship designers who want to provide more navigational quality-of-life without
 losing compatibility with Starbase's most prevalent GPS system.
 
-[Navgrid in action; pointing at Origin 14]
+[...or at home](img/demo_2.jpg)
 
 ## Requirements and Features
 
 Performance: *0.8s* refresh time with max *3.0s* processing latency
 
 **Core:**
-[Picture 3 nav recievers, 4 racks, and the required controls]
+
 - Triplicate ISAN synchronization: 3 individual ISAN units operate on separate
 synchronized chips to provide maximum accuracy with zero performance loss.
 - Full support for any other ISAN addons you might be using, as long as they
@@ -40,14 +42,14 @@ let you run with ISAN `speed` enabled.
 - 10 user-defined waypoints
 
 **(Optional) ISAN QUAD:**
-[Picture 9 more nav recievers]
+
 + QUAD damage detection: QUAD mode has the same automatic damage detection as
 standard ISAN, with all three units entering MONO in unison if receivers are
 damaged or destroyed.
 + Significantly reduced jitter while turning.
 
 **(Optional) Expansion modules:**
-[Picture 1 memory card and 1 chip]
+
 + 4 more user-defined waypoints
 + Display navpoint coordinates and ship attitude
 
