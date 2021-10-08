@@ -133,13 +133,13 @@ Once NavGrid is displaying its crosshair, set your waypoint to 4 and follow the 
 # Controls
 
 ### **Selecting navpoints:**
-Press nUp or nDn to change the navpoint index.
+Press nUp or nDn to change the selected navpoint.
 
 ### **Set current navpoint to the current coordinates:**
-Press nSet. Press again to overwrite if a waypoint already exists at this index. Presets cannot be overwritten.
+Press nSet. Press again to overwrite if a navpoint already exists at this index. Presets cannot be overwritten.
 
 ### **Edit navpoint or set navpoint from coordinates:**
-Using the universal tool on the included displays, edit nName, nX, nY, and/or nZ as desired. Press nSave. Press again to overwrite. Presets cannot be edited.
+Using the universal tool on the included displays, edit nName, nX, nY, and/or nZ as desired. Press nSave. Press again to confirm overwrite. Presets cannot be edited.
 
 <img src="img/controls_grid.jpg" alt="The Grid" width="300" height="300"> | <img src="img/controls_eng_panel.jpg" alt="Engineering Panel" width="670" height="500">
 
