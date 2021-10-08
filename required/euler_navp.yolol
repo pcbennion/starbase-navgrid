@@ -30,5 +30,12 @@ ss="[  ERROR  ]" :nStat=ss nn="Bad Format" :nName=nn GOTO13  //NavGrid
 // Computes the Euler Angles of your target navpoint to find its
 // alignment relative to your current position.
 
-// Whenever a new navpoint is loaded into nStr by navp.yolol, this
+// Euler outputs are saved to :nPit, :nHdg, and :nDist
+
+// Whenever a new navpoint is loaded into :nStr by navp.yolol, this
 // chip decodes it into usable coordinates.
+
+// Once loaded, navpoint attributes are saved to :nName, :nX, :nY, :nZ
+
+// Navpoint status messages (such as loading, no waypoint, etc) are
+// saved to :nDist
