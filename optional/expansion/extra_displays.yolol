@@ -18,10 +18,6 @@ e*=e>0 e+=2*(:sy>A)*(e<5) IF e--<1 THEN m=at END :Attitude=m GOTO3
 
 
 
-
-
-
-
 // ------------------ This line is 70 chars long ------------------- >
 
 // extra_displays.yolol
@@ -29,5 +25,10 @@ e*=e>0 e+=2*(:sy>A)*(e<5) IF e--<1 THEN m=at END :Attitude=m GOTO3
 
 // ------------------ This line is 70 chars long ------------------- >
 
-// This optional chip creates easy displays for your current vehicle
-// attitude and the ISAN coordinates of your navpoint target.
+// This optional chip formats some of navgrid's internal  variables
+// into displays for extra information.
+
+// Atttude: Displays your vehicles current roll, pitch, and heading.
+
+// NavC: Displays the x, y, z coordinate of your current selected
+// navpoint.

@@ -35,3 +35,5 @@ s=:sy err+=2*(err<9)*(:sy>"9") GOTO6-(err--<1) // euler_attitude.yolol
 // pointed directly into the belt) and Pitch is inclination along the
 // ISAN Y axis (ie :Pit=90 when you are pointed directly up toward the
 // top of the belt)
+
+// Outputs are saved to :Pit, :Hdg, and :Rol

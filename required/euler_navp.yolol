@@ -2,7 +2,7 @@ o=90 p=180 u=40 v=50 d=10 h=0.5 ds="$" ns="" nd=0 t="9843" r=17 GOTO3
 :nPit=u*n3^3+v*n3 :nHdg=(1-2*(n1>0))*(-u*i^3-v*i+o) :nDist=nd
 s0=:sy%4 x=1*nd n1=:nX-:x n2=:nZ-:z n3=:nY-:y nd=SQRT(n1^2+n2^2+n3^2)
 :nStat="" x=1*nd n1/=nd n2/=nd n3/=nd nd=nd/1000*1000  //euler_navp by
-i=n2/SQRT(1-n3^2) x=:sy%4 GOTO5-(3-11*(ns!=:nStr))*(x!=s0)//StandPeter
+i=n2/SQRT(1-n3^2) x=:sy%4 GOTO5-(3-12*(ns!=:nStr))*(x!=s0)//StandPeter
 s0=:sy err+=2*(err<9)*(:sy>"9") x=6-(err--<1) GOTOx+(14-x)*(ns!=:nStr)
 s-- s*=s>0 p1="X+:\nPrograde0" p2="X-:\nRetrograde1" p3="Z+:\nRadial2"
 s*=s<7 p4="Z-:\nAnti-radial3" p5="Y+:\nNormal4" p6="Y-:\nAnti-normal5"
@@ -28,7 +28,14 @@ ss="[  ERROR  ]" :nStat=ss nn="Bad Format" :nName=nn GOTO13  //NavGrid
 // ADVANCED CHIP REQUIRED
 
 // Computes the Euler Angles of your target navpoint to find its
-// alignment related to your current position.
+// alignment relative to your current position.
 
-// Whenever a new navpoint is loaded into nStr by navp.yolol, this
+// Euler outputs are saved to :nPit, :nHdg, and :nDist
+
+// Whenever a new navpoint is loaded into :nStr by navp.yolol, this
 // chip decodes it into usable coordinates.
+
+// Once loaded, navpoint attributes are saved to :nName, :nX, :nY, :nZ
+
+// Navpoint status messages (such as loading, no waypoint, etc) are
+// saved to :nDist

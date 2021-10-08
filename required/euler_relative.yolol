@@ -30,3 +30,5 @@ s=:sy err+=2*(err<9)*(:sy>"9") GOTO6-(err--<1) // euler_relative.yolol
 // Subtracts absolute attitude from navpoint alignment, and rotates
 // the result by your current roll to determine the relative pitch and
 // heading to your navpoint target.
+
+// Outputs are saved to :tPit and :tHdg
