@@ -16,7 +16,7 @@ Coordinate displays are *totally optional*. If you don't want your coordinates o
 
 Best of all, it is fully compatible with most other projects that use ISAN, as long as they are compatible with ISAN's `speed` setting.
 
-**If you want to take NavGrid for a test drive *right now*, download and import my <a href=blueprints/NavGridDemoShip.fbe download>NavGrid Demo Ship</a> for a fully functional QUAD setup.**
+**If you want to take NavGrid for a test drive *right now*, download and import my [NavGrid Demo Ship](https://github.com/pcbennion/starbase-navgrid/releases/download/v1.0-20211008/NavgridDemoShip.fbe) for a fully functional QUAD setup.**
 
 <img src="img/demo_2.jpg" alt="Navigating at home..." width="800" height="600">
 
@@ -74,7 +74,7 @@ Don't worry: NavGrid includes [another one](required/isan.yolol).
 
 If you are unfamiliar with ISAN, please refer to the [ISAN manual](isan.to/doc) for a really good explanation of how all this works.
 
-### **2 - Download the <a href=blueprints/NavGridV1-0.fbe download>NavGrid V1.0</a> blueprint and import it into your SSC.**
+### **2 - Download the [NavGrid V1.0](https://github.com/pcbennion/starbase-navgrid/releases/download/v1.0-20211008/NavGridV1-0.fbe) blueprint and import it into your SSC.**
 
 [This reddit post](https://www.reddit.com/r/starbase/comments/p49nc1/tutorial_how_to_share_selfmade_blueprints_with/) has good directions for importing blueprints.
 
