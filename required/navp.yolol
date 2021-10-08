@@ -34,7 +34,7 @@ a=:np17 b=:np18 c=:np19 d=:np20 v=a+b+c+d-w-a-b-c-d GOTO2
 // - Up to 14 editable user-defined navpoints. Navpoints can be
 //   selected, set, and edited using the controls below
 
-// Controls:
+// Required Controls:
 // - nUp, nDn: Any button; ButtonStyle=1. Increase or decrease the
 // current navpoint index
 // - nSet: Any button; ButtonStyle=1. Set the selected navpoint to the

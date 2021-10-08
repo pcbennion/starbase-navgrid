@@ -16,7 +16,7 @@ Coordinate displays are *totally optional*. If you don't want your coordinates o
 
 Best of all, it is fully compatible with most other projects that use ISAN, as long as they are compatible with ISAN's `speed` setting.
 
-**If you want to take NavGrid for a test drive *right now*, download and import my [NavGrid Demo Ship](blueprints/NavGridV1-0.fbe) for a fully functional QUAD setup.**
+**If you want to take NavGrid for a test drive *right now*, download and import my <a href=blueprints/NavGridDemoShip.fbe download>NavGrid Demo Ship</a> for a fully functional QUAD setup.**
 
 <img src="img/demo_2.jpg" alt="Navigating at home..." width="800" height="600">
 
@@ -74,15 +74,13 @@ Don't worry: NavGrid includes [another one](required/isan.yolol).
 
 If you are unfamiliar with ISAN, please refer to the [ISAN manual](isan.to/doc) for a really good explanation of how all this works.
 
-### **2 - Download the [NavGridV1-0](blueprints/NavGridV1-0.fbe) blueprint and import it into your SSC.**
+### **2 - Download the <a href=blueprints/NavGridV1-0.fbe download>NavGrid V1.0</a> blueprint and import it into your SSC.**
 
 [This reddit post](https://www.reddit.com/r/starbase/comments/p49nc1/tutorial_how_to_share_selfmade_blueprints_with/) has good directions for importing blueprints.
 
 ### **3 - Load the NavGrid blueprint and delete any modules you don't want.**
 
-<img src="img/modules_core.jpg" alt="Core" width="270" height="200">
-<img src="img/modules_quad.jpg" alt="QUAD" width="270" height="200">
-<img src="img/modules_exp.jpg" alt="Expansion" width="270" height="200">
+<img src="img/modules_core.jpg" alt="Core" width="270" height="200"> | <img src="img/modules_quad.jpg" alt="QUAD" width="270" height="200"> | <img src="img/modules_exp.jpg" alt="Expansion" width="270" height="200">
 
 *My recommendation:* Use Core + the Expansion, but not QUAD. MONO requires a little more patience (just like regular ISAN) but it is sufficient for 90% of situations.
 
@@ -114,8 +112,7 @@ Following that pattern, the "forward" and "down" receivers continue the alphabet
 
 For maximum accuracy, each grouping of A/E/I, B/F/J, C/G/K, and D/H/L should form their own `L` shape as shown below. The recievers included in the blueprint are in the correct formation but you should always double-check after installation.
 
-<img src="img/installation_quad_2.jpg" alt="QUAD L" width="400" height="300">
-<img src="img/installation_quad_1.jpg" alt="QUAD Naming" width="400" height="300">
+<img src="img/installation_quad_2.jpg" alt="QUAD L" width="400" height="300"> | <img src="img/installation_quad_1.jpg" alt="QUAD Naming" width="400" height="300">
 
 ### **5 - Add all chip racks and displays**
 
@@ -144,8 +141,7 @@ Press nSet. Press again to overwrite if a waypoint already exists at this index.
 ### **Edit navpoint or set navpoint from coordinates:**
 Using the universal tool on the included displays, edit nName, nX, nY, and/or nZ as desired. Press nSave. Press again to overwrite. Presets cannot be edited.
 
-<img src="img/controls_grid.jpg" alt="The Grid" width="300" height="300">
-<img src="img/controls_eng_panel.jpg" alt="Engineering Panel" width="400" height="300">
+<img src="img/controls_grid.jpg" alt="The Grid" width="300" height="300"> | <img src="img/controls_eng_panel.jpg" alt="Engineering Panel" width="400" height="300">
 
 <div id='install'></div>
 
