@@ -2,15 +2,13 @@
 
 <img src="img/title.jpg" alt="NavGrid" width="300" height="300">
 
-NavGrid is an all-in-one navigation system for Starbase. It builds upon Collective's ISAN2 GPS system, adding an easy-to follow visual interface that supplements ISAN's raw-numbers display.
+NavGrid is an all-in-one navigation system for Starbase. It builds upon Collective's ISAN2 GPS system, using ISAN data to produce an easy-to-follow visual navigation display.
 
 It features 6 directional presets, up to 14 editable user-defined waypoints, and several navigational displays to help point you whichever direction you might be going.
 
 It works while stationary and while flying at max speed.
 
 You can set waypoints at your current location and at far off destinations.
-
-
 
 Coordinate displays are *totally optional*. If you don't want your coordinates on display (or if you just want purely visual navigation) you can hide all related displays on a memory chip with no loss in functionality.
 
