@@ -141,7 +141,7 @@ Press nSet. Press again to overwrite if a navpoint already exists at this index.
 ### **Edit navpoint or set navpoint from coordinates:**
 Using the universal tool on the included displays, edit nName, nX, nY, and/or nZ as desired. Press nSave. Press again to confirm overwrite. Presets cannot be edited.
 
-<img src="img/controls_grid.jpg" alt="The Grid" width="300" height="300"> | <img src="img/controls_eng_panel.jpg" alt="Engineering Panel" width="530" height="400">
+<img src="img/controls_grid.jpg" alt="The Grid" width="300" height="300"> | <img src="img/controls_eng_panel.jpg" alt="Engineering Panel" width="470" height="350">
 
 <div id='install'></div>
 
