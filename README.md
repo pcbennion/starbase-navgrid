@@ -14,7 +14,9 @@ Coordinate displays are *totally optional*. If you don't want your coordinates o
 
 Best of all, it is fully compatible with most other projects that use ISAN, as long as they are compatible with ISAN's `speed` setting.
 
-**If you want to take NavGrid for a test drive *right now*, download and import my [NavGrid Demo Ship](https://github.com/pcbennion/starbase-navgrid/releases/download/v1.0-20211008/NavgridDemoShip.fbe) for a fully functional QUAD setup.**
+Check out a brief video demo here: https://www.youtube.com/watch?v=LLAd0BJyT9I
+
+**If you want to take NavGrid for a test drive *right now*, download and import my [Demo Ship](https://github.com/pcbennion/starbase-navgrid/releases/download/v1.0-20211008/NavgridDemoShip.fbe) for a fully functional QUAD setup.**
 
 <img src="img/demo_2.jpg" alt="Navigating at home..." width="800" height="600">
 
