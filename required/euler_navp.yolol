@@ -38,4 +38,4 @@ ss="[  ERROR  ]" :nStat=ss nn="Bad Format" :nName=nn GOTO13  //NavGrid
 // Once loaded, navpoint attributes are saved to :nName, :nX, :nY, :nZ
 
 // Navpoint status messages (such as loading, no waypoint, etc) are
-// saved to :nDist
+// saved to :nStat
