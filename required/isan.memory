@@ -1,7 +1,7 @@
 x
 y
 z
-sy
+s
 Ux
 Uy
 Uz
@@ -13,5 +13,4 @@ Vz
 // names in a memory chip.
 
 // This chip provides memory for all three ISAN instances required for
-// NavGrid, plus a synchronization heartbeat to ensure maximum
-// accuracy
+// NavGrid

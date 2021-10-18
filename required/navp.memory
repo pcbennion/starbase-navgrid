@@ -7,10 +7,11 @@ np12
 np13
 np14
 np15
-np16
+nStr
 
 // This is not yolol code. Save all ten lines above to separate field
 // names in a memory chip.
 
-// This chip provides memory for 10 of the max 14 user-defined
-// navpoints supported by navp.yolol
+// This chip provides memory for 9 of the max 14 user-defined
+// navpoints supported by navp.yolol. nStr is used to load navpoint
+// strings prior to processing.

@@ -1,8 +1,8 @@
+sy
 Pit
 Hdg
 Rol
 nStat
-nStr
 nPit
 nHdg
 nDist
@@ -17,3 +17,6 @@ tHdg
 // and processing. Variables starting with 't' represent the Relative
 // heading and pitch to the navpoint target. Veriables with no prefix
 // represent absolute vehicle alignment.
+
+// In addtion, :sy is used as a synchronization heartbeat to keep all
+// NavGrid chips in lockstep and avoid erroneous readings.

@@ -15,8 +15,8 @@ IFi==13 THEN:np13=v ENDIFi==14 THEN:np14=v ENDIFi==15 THEN:np15=v END
 IFi==16 THEN:np16=v ENDIFi==17 THEN:np17=v ENDIFi==18 THEN:np18=v END
 IFi==19 THEN:np19=v ENDIFi==20 THEN:np20=v END :nSet=0 :nSave=0 GOTO2
 a=:np07 b=:np08 c=:np09 d=:np10 e=:np11 v=a+b+c+d+e-w-a-b-c-d-e GOTO2
-a=:np12 b=:np13 c=:np14 d=:np15 e=:np16 v=a+b+c+d+e-w-a-b-c-d-e GOTO2
-a=:np17 b=:np18 c=:np19 d=:np20 v=a+b+c+d-w-a-b-c-d GOTO2
+a=:np12 b=:np13 c=:np14 d=:np15 v=a+b+c+d-w-a-b-c-d GOTO2
+a=:np16 b=:np17 c=:np18 d=:np19 e=:np20 v=a+b+c+d+e-w-a-b-c-d-e GOTO2
 :nStat="[  ERROR  ]" :nName=" No Memory" v="" GOTO2 //starbase-navgrid
 // ------------------ This line is 70 chars long ------------------- >
 

@@ -15,7 +15,7 @@ t+=er i+=fr g+=gr f+=hr //ISAN doc: isan.to/doc   -   Starmap: isan.to
 x+=(6-x)*(x<7) :x=(t+i)/e+g/u-f/k :y=i/l-t/mm+(g+f)/nn :z=(g+f-t-i)/o
 st=:_==c :_=rr+h+xm+:x/n*A+ym+:y/n*A+zm+:z/n*A+sm+ss gotoej+x*so+p*st
 w+=:x uu+=:y vv+=:z r=w-tu j=uu-uv v=vv-vt ej+=(ii++%3)>1 gotox
-m=(r*r+j*j+v*v)^b ss=m/dv*A tu=w uv=uu vt=vv w=0 uu=0 vv=0 ej=17 gotox
+m=(r*r+j*j+v*v)^b :s=m/dv*A tu=w uv=uu vt=vv w=0 uu=0 vv=0 ej=17 gotox
  // Modified for NavGrid https://github.com/pcbennion/starbase-navgrid
 st=:_!=c :_=rr+"\n\n   ISAN2\n  OFFLINE" goto 20*st   // by StandPeter
 // <-------------- this line is 70 characters long ------------------>
