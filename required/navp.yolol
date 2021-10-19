@@ -4,16 +4,16 @@ x=1 di=:nUp-:nDn st=1-:nSet :nSet=0 sv=1-:nSave :nSave=0 :nUp=0 :nDn=0
 x/=sv*st+(i<7) i+=di i+=1*(i<1)-1*(i>20) is="0"-(i<10)+i GOTO2-(di!=0)
 t=9 H=1000 ds="$" np="%np" om=n+"OVERWRITING\nConfirm? " x/=sv GOTO9
 x/=(:nStr!="")*(1-:nSave) :nSave=0 :NavP=is+r+om+t GOTO6-4*(t--<1)
-nn=:nName nn=nn-ds-np x/=nn!=:nName :nName=nn GOTO7      //NavP.yolol
-v=np+is+": "+:nX/H*H+" "+:nY/H*H+" "+:nZ/H*H+ds+nn GOTO11//for NavGrid
+nn=:nName nn=nn-ds-np x/=nn!=:nName :nName=nn GOTO7      // NavP.yolol
+:nName=nn :nX=:nX/H*H :nY=:nY/H*H :nZ=:nZ/H*H GOTO11    // for NavGrid
 x/=(:nStr!="")*(1-:nSet) :nSet=0 :NavP=is+r+om+t GOTO9-7*(t--<1)
-nn="Navpoint "+is v=np+is+": "+:x/H*H+" "+:y/H*H+" "+:z/H*H+ds+nn
-:nName=nn :NavP=is+r+"[ Saving  ]"+n+nn                //by StandPeter
-IF i==7 THEN:np07=v ENDIF i==8 THEN:np08=v ENDIF i==9 THEN:np09=v END
-IFi==10 THEN:np10=v ENDIFi==11 THEN:np11=v ENDIFi==12 THEN:np12=v END
-IFi==13 THEN:np13=v ENDIFi==14 THEN:np14=v ENDIFi==15 THEN:np15=v END
-IFi==16 THEN:np16=v ENDIFi==17 THEN:np17=v ENDIFi==18 THEN:np18=v END
-IFi==19 THEN:np19=v ENDIFi==20 THEN:np20=v END :nSet=0 :nSave=0 GOTO2
+:nName="Navpoint "+is :nX=:x/H*H :nY=:y/H*H :nZ=:z/H*H //by StandPeter
+:NavP=is+r+"[ Saving  ]"+n+nn u=np+is+": "+:nX+" "+:nY+" "+:nZ+ds+nn
+IF i==7 THEN:np07=u ENDIF i==8 THEN:np08=u ENDIF i==9 THEN:np09=u END
+IFi==10 THEN:np10=u ENDIFi==11 THEN:np11=u ENDIFi==12 THEN:np12=u END
+IFi==13 THEN:np13=u ENDIFi==14 THEN:np14=u ENDIFi==15 THEN:np15=u END
+IFi==16 THEN:np16=u ENDIFi==17 THEN:np17=u ENDIFi==18 THEN:np18=u END
+IFi==19 THEN:np19=u ENDIFi==20 THEN:np20=u END :nSet=0 :nSave=0 GOTO2
 a=:np07 b=:np08 c=:np09 d=:np10 e=:np11 v=a+b+c+d+e-w-a-b-c-d-e GOTO2
 a=:np12 b=:np13 c=:np14 d=:np15 v=a+b+c+d-w-a-b-c-d GOTO2
 a=:np16 b=:np17 c=:np18 d=:np19 e=:np20 v=a+b+c+d+e-w-a-b-c-d-e GOTO2
