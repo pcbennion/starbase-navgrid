@@ -1,5 +1,5 @@
-i+=i<1 v=i :nStat="" :nName="" idx=i-7/(i>6) w=np+is GOTO17+idx/5
-n="\n\n" r="/20\n" :nStr=v :NavP=is+r+:nStat+n+:nName
+i+=i<1 v0=v v=i :nName="" idx=i-7/(i>6) v=v0 w=np+is GOTO17+idx/5
+n="\n\n" r="/20\n" :nStr=v :nStat-="0" :NavP=is+r+:nStat+n+:nName
 x=1 di=:nUp-:nDn st=1-:nSet :nSet=0 sv=1-:nSave :nSave=0 :nUp=0 :nDn=0
 x/=sv*st+(i<7) i+=di i+=1*(i<1)-1*(i>20) is="0"-(i<10)+i GOTO2-(di!=0)
 t=9 H=1000 ds="$" np="%np" om=n+"OVERWRITING\nConfirm? " x/=sv GOTO9
@@ -17,7 +17,7 @@ IFi==19 THEN:np19=u ENDIFi==20 THEN:np20=u END :nSet=0 :nSave=0 GOTO2
 a=:np07 b=:np08 c=:np09 d=:np10 e=:np11 v=a+b+c+d+e-w-a-b-c-d-e GOTO2
 a=:np12 b=:np13 c=:np14 d=:np15 v=a+b+c+d-w-a-b-c-d GOTO2
 a=:np16 b=:np17 c=:np18 d=:np19 e=:np20 v=a+b+c+d+e-w-a-b-c-d-e GOTO2
-:nStat="[  ERROR  ]" :nName=" No Memory" v="" GOTO2 //starbase-navgrid
+:nStat="[  ERROR  ]" :nName=" No Memory" GOTO2     // starbase-navgrid
 // ------------------ This line is 70 chars long ------------------- >
 
 // navp.yolol
